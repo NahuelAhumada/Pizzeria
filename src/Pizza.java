@@ -14,6 +14,7 @@
 public class Pizza {
     //pre: clasificacion de tamaños Grande: 8 porc.+100 Extra Grande: 10 porc.+120 y Ultra Grande:12 porc.+130
     private int tamanio;
+    
     private Tipo tipo;
     private Variedad variedad;
 
