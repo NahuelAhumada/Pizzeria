@@ -102,10 +102,10 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                         .addComponent(botonCalcularPedido))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addComponent(comboBoxTamanio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(82, 82, 82)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(comboBoxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(85, 85, 85)
                                     .addComponent(comboBoxVariedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -173,9 +173,9 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         String nombreIngresado;String hora;String demoraIngresada;
         String cantidad=textFieldCantidad.getText().trim();
         nombreIngresado = (String) textFieldNombre.getText().trim();
-        hora = textFieldNombre.getSelectedText().replace(':', ',');
-        demoraIngresada = textFieldDemora.getSelectedText().trim();
-        if(nombreIngresado.isEmpty()||demoraIngresada.isEmpty()){
+        hora = textFieldNombre.getSelectedText();
+        demoraIngresada = textFieldDemora.getText().trim();
+        if(nombreIngresado.isEmpty()||demoraIngresada.isEmpty()||cantidad.isEmpty()){
             labelError.setText("Texto vacio");
         }else{
             
@@ -191,7 +191,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         String selectedItem = (String) comboBoxVariedad.getSelectedItem();
         Variedad variedadDeLaPizza = new Variedad(selectedItem);
         Tipo tipoSeleccionado;
-        Integer tamanioSeleccionado = (Integer) comboBoxTamanio.getSelectedItem();
+        Integer tamanioSeleccionado = Integer.valueOf( (String) comboBoxTamanio.getSelectedItem());
         
         String tipo = (String) comboBoxTipo.getSelectedItem();
         if (tipo.equals("A la piedra")) {
@@ -224,13 +224,13 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUINuevoPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIPizzeriaCantidades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUINuevoPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIPizzeriaCantidades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUINuevoPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIPizzeriaCantidades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUINuevoPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIPizzeriaCantidades.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
