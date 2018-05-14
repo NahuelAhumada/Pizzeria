@@ -9,11 +9,11 @@
  *
  * @author ITUOM
  */
-public class ItemPedidio {
+public class ItemPedido {
     private Pizza pizza;
     private int cantidad;
 
-    public ItemPedidio(Pizza pizza, int cantidad) {
+    public ItemPedido(Pizza pizza, int cantidad) {
         if(cantidad<0){
             throw new Error("Cantidad invalida");
         }

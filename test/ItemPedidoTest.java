@@ -11,18 +11,18 @@ import static org.junit.Assert.*;
  *
  * @author ITUOM
  */
-public class ItemPedidioTest {
+public class ItemPedidoTest {
 
-    private ItemPedidio itemTest;
+    private ItemPedido itemTest;
     private Pizza pizzaPrueba=new Pizza(8, Tipo.MOLDE, new Variedad("Muzzarella"));
     //precio:190
     @Test(expected=Error.class)
     public void debeDarErrorSiPasoUnNumeroMenorACero() {
-        itemTest=new ItemPedidio(pizzaPrueba, -1);
+        itemTest=new ItemPedido(pizzaPrueba, -1);
     }
     @Test()
     public void deberia(){
-        itemTest=new ItemPedidio(pizzaPrueba, 2);
+        itemTest=new ItemPedido(pizzaPrueba, 2);
         assertEquals(380f, itemTest.calcularCosto(), 0.01);
     }
     

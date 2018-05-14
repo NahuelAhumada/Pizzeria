@@ -13,9 +13,9 @@ public class Pedido {
     private String nombreCliente;
     private double horaCreacion;
     private int tiempoDemoraMinutos;
-    private ItemPedidio pedido;
+    private ItemPedido pedido;
 
-    public Pedido(String nombreCliente, double horaCreacion, int tiempoDemoraMinutos, ItemPedidio pedido) {
+    public Pedido(String nombreCliente, double horaCreacion, int tiempoDemoraMinutos, ItemPedido pedido) {
         this.nombreCliente = nombreCliente;
         this.horaCreacion = horaCreacion;
         this.tiempoDemoraMinutos = tiempoDemoraMinutos;

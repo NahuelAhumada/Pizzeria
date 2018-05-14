@@ -88,7 +88,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
 
         labelError.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelError.setForeground(new java.awt.Color(255, 0, 0));
-        labelError.setText("jLabel1");
+        labelError.setText("( .... )");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,17 +120,16 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                                     .addComponent(labelPizzas)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(textFieldCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(labelHora)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textFieldHora, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(labelNombre)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(textFieldNombre))))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(labelHora)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(textFieldHora, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(labelNombre)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(textFieldNombre)))
                             .addComponent(labelCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 26, Short.MAX_VALUE)))
+                        .addGap(0, 35, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -169,7 +168,6 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void clickBotonCalcularPedido(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickBotonCalcularPedido
-    
         String nombreIngresado;String hora;String demoraIngresada;
         String cantidad=textFieldCantidad.getText().trim();
         nombreIngresado = (String) textFieldNombre.getText().trim();
@@ -202,7 +200,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             tipoSeleccionado = Tipo.MOLDE;
         }
         Pizza pizzaPedida = new Pizza(tamanioSeleccionado, tipoSeleccionado, variedadDeLaPizza);
-        ItemPedidio cantidaPedida = new ItemPedidio(pizzaPedida, cantidadReal);
+        ItemPedido cantidaPedida = new ItemPedido(pizzaPedida, cantidadReal);
         pedido = new Pedido(nombreIngresado, Double.parseDouble(hora), demoraReal, cantidaPedida);
         }
     }//GEN-LAST:event_clickBotonCalcularPedido
