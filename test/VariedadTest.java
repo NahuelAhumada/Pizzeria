@@ -3,13 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Pizzeria;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  *
  * @author ITUOM
  */
-public enum Tipo {
-    //pre: Piedra:+20 Parilla:+30 Molde:+40
-    MOLDE,PARRILA,PIEDRA;
+public class VariedadTest {
+    Variedad vt=new Variedad("");
+    public VariedadTest() {
+    }
+
+    @Test
+    public void testSomeMethod() {
+    }
+    
 }
