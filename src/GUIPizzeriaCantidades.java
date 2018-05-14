@@ -179,7 +179,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         String nombreIngresado;String hora;String demoraIngresada;
         String cantidad=textFieldCantidad.getText().trim();
         nombreIngresado = (String) textFieldNombre.getText().trim();
-        hora = textFieldNombre.getText().trim();
+        hora = textFieldHora.getText().trim();
         demoraIngresada = textFieldDemora.getText().trim();
         if(nombreIngresado.isEmpty()||demoraIngresada.isEmpty()||cantidad.isEmpty()){
             labelError.setText("Texto vacio");
@@ -212,6 +212,9 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             ItemPedido cantidaPedida = new ItemPedido(pizzaPedida, cantidadReal);
             pedido = new Pedido(nombreIngresado, hora, demoraReal, cantidaPedida);
             labelCosto.setText("$"+String.valueOf(pedido.getPrecio()));
+            GUIPantallaPizzeria resultado=new GUIPantallaPizzeria();
+            resultado.setVisible(true);
+            resultado.inicializar(nombreIngresado, hora, cantidad, String.valueOf(tamanioSeleccionado), tipo, selectedItem, pedido.getPrecio());
         } }catch (NumberFormatException e) {
             labelError.setText("Dato Invalido");
         }

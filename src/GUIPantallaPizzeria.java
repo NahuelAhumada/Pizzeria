@@ -228,4 +228,12 @@ public class GUIPantallaPizzeria extends javax.swing.JFrame {
     private javax.swing.JLabel labelVariedad;
     private javax.swing.JLabel labelVariedadRespuesta;
     // End of variables declaration//GEN-END:variables
-}
+public void inicializar(String nombre, String hora,String cantidad,String porciones, String tipo, String gusto, float precio ){
+    labelClienteRespuesta.setText(nombre);
+    labelHoraRespuesta.setText(hora);
+    labelPizzaCantRespuesta.setText(cantidad);
+    labelPorcionesRespuesta.setText(porciones);
+    labelTipoRespuesta.setText(tipo);
+    labelVariedadRespuesta.setText(gusto);
+    labelPizzeriaPedidoResultado.setText(String.valueOf(precio));
+}}
