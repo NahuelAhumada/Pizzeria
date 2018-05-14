@@ -182,35 +182,41 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         demoraIngresada = textFieldDemora.getText().trim();
         if(nombreIngresado.isEmpty()||demoraIngresada.isEmpty()||cantidad.isEmpty()){
             labelError.setText("Texto vacio");
-        }else{
+        }
             
-        Integer demoraReal=1;
-        Integer cantidadReal=1;
+        
+        else {
+            
+        
         try {
-            demoraReal=Integer.valueOf(demoraIngresada);
-            cantidadReal=Integer.valueOf(cantidad);
-        } catch (NumberFormatException e) {
-            System.out.println("Dato Invalido");
-        }
+            Integer demoraReal=Integer.valueOf(demoraIngresada);
+            Integer cantidadReal=Integer.valueOf(cantidad);
+            if(cantidadReal<1){
+            labelError.setText("Cantidad invalida");
+            }else{
+            String selectedItem = (String) comboBoxVariedad.getSelectedItem();
+             Variedad variedadDeLaPizza = new Variedad(selectedItem);
+            Tipo tipoSeleccionado;
+            Integer tamanioSeleccionado = Integer.valueOf( (String) comboBoxTamanio.getSelectedItem());
         
-        String selectedItem = (String) comboBoxVariedad.getSelectedItem();
-        Variedad variedadDeLaPizza = new Variedad(selectedItem);
-        Tipo tipoSeleccionado;
-        Integer tamanioSeleccionado = Integer.valueOf( (String) comboBoxTamanio.getSelectedItem());
-        
-        String tipo = (String) comboBoxTipo.getSelectedItem();
-        if (tipo.equals("A la piedra")) {
+            String tipo = (String) comboBoxTipo.getSelectedItem();
+            if (tipo.equals("A la piedra")) {
             tipoSeleccionado = Tipo.PIEDRA;
-        } else if (tipo.equals("A la parrilla")) {
+            } else if (tipo.equals("A la parrilla")) {
             tipoSeleccionado = Tipo.PARRILA;
-        } else {
+            } else {
             tipoSeleccionado = Tipo.MOLDE;
+            }
+            Pizza pizzaPedida = new Pizza(tamanioSeleccionado, tipoSeleccionado, variedadDeLaPizza);
+            ItemPedido cantidaPedida = new ItemPedido(pizzaPedida, cantidadReal);
+            pedido = new Pedido(nombreIngresado, hora, demoraReal, cantidaPedida);
+            labelCosto.setText("$"+String.valueOf(pedido.getPrecio()));
+        } }catch (NumberFormatException e) {
+            labelError.setText("Dato Invalido");
         }
-        Pizza pizzaPedida = new Pizza(tamanioSeleccionado, tipoSeleccionado, variedadDeLaPizza);
-        ItemPedido cantidaPedida = new ItemPedido(pizzaPedida, cantidadReal);
-        pedido = new Pedido(nombreIngresado, hora, demoraReal, cantidaPedida);
-        labelCosto.setText("$"+String.valueOf(pedido.getPrecio()));
+        
         }
+        
     }//GEN-LAST:event_clickBotonCalcularPedido
 
     /**
