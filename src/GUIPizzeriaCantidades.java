@@ -178,7 +178,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         String nombreIngresado;String hora;String demoraIngresada;
         String cantidad=textFieldCantidad.getText().trim();
         nombreIngresado = (String) textFieldNombre.getText().trim();
-        hora = textFieldNombre.getSelectedText();
+        hora = textFieldNombre.getText().trim();
         demoraIngresada = textFieldDemora.getText().trim();
         if(nombreIngresado.isEmpty()||demoraIngresada.isEmpty()||cantidad.isEmpty()){
             labelError.setText("Texto vacio");
@@ -208,7 +208,8 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         }
         Pizza pizzaPedida = new Pizza(tamanioSeleccionado, tipoSeleccionado, variedadDeLaPizza);
         ItemPedido cantidaPedida = new ItemPedido(pizzaPedida, cantidadReal);
-        pedido = new Pedido(nombreIngresado, Double.parseDouble(hora), demoraReal, cantidaPedida);
+        pedido = new Pedido(nombreIngresado, hora, demoraReal, cantidaPedida);
+        labelCosto.setText("$"+String.valueOf(pedido.getPrecio()));
         }
     }//GEN-LAST:event_clickBotonCalcularPedido
 

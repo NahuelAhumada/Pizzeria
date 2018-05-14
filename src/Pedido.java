@@ -11,15 +11,18 @@
  */
 public class Pedido {
     private String nombreCliente;
-    private double horaCreacion;
+    private String horaCreacion;
     private int tiempoDemoraMinutos;
     private ItemPedido pedido;
 
-    public Pedido(String nombreCliente, double horaCreacion, int tiempoDemoraMinutos, ItemPedido pedido) {
+    public Pedido(String nombreCliente, String horaCreacion, int tiempoDemoraMinutos, ItemPedido pedido) {
         this.nombreCliente = nombreCliente;
         this.horaCreacion = horaCreacion;
         this.tiempoDemoraMinutos = tiempoDemoraMinutos;
         this.pedido = pedido;
+    }
+    public float getPrecio(){
+        return pedido.calcularCosto();
     }
     
 }
