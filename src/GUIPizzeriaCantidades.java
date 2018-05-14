@@ -1,4 +1,10 @@
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import sun.util.calendar.Gregorian;
+
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,6 +24,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
      */
     public GUIPizzeriaCantidades() {
         initComponents();
+        hourConfig();
     }
 
     /**
@@ -237,10 +244,13 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUIPizzeriaCantidades().setVisible(true);
+                
+                
+                
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonCalcularPedido;
     private javax.swing.JComboBox<String> comboBoxTamanio;
@@ -257,4 +267,28 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldHora;
     private javax.swing.JTextField textFieldNombre;
     // End of variables declaration//GEN-END:variables
+    private void hourConfig(){
+        Date date= new Date();
+        Calendar calendar= GregorianCalendar.getInstance();
+        calendar.setTime(date);
+        int hora=calendar.get(Calendar.HOUR_OF_DAY);
+        int minutos=calendar.get(Calendar.MINUTE);
+        int segundos=calendar.get(Calendar.SECOND);
+        
+        String formatoHora=hora+":";
+        if(minutos<10){
+            formatoHora+="0"+minutos+":";
+        }else{
+            formatoHora+=minutos+":";
+        }
+        if(segundos<10){
+            formatoHora+="0"+segundos;
+        }else{
+            formatoHora+=segundos;
+        }
+        System.out.println(formatoHora);
+        textFieldHora.setText(formatoHora);
+    }
+
+
 }
