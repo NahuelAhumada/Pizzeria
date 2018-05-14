@@ -14,6 +14,9 @@ public class ItemPedidio {
     private int cantidad;
 
     public ItemPedidio(Pizza pizza, int cantidad) {
+        if(cantidad<0){
+            throw new Error("Cantidad invalida");
+        }
         this.pizza = pizza;
         this.cantidad = cantidad;
     }

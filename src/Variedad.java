@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class Variedad {
     private String nombre;
-    private float precio;
+    private float precio=0;
     private List<String> ingredientes;
 
     public Variedad(String nombre, float precio, List<String> ingredientes) {
