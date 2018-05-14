@@ -41,7 +41,6 @@ public class GUIPantallaPizzeria extends javax.swing.JFrame {
         labelTotal = new javax.swing.JLabel();
         labelPizzaCant = new javax.swing.JLabel();
         labelPizzaCantRespuesta = new javax.swing.JLabel();
-        botonImprimir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,10 +94,6 @@ public class GUIPantallaPizzeria extends javax.swing.JFrame {
         labelPizzaCantRespuesta.setForeground(new java.awt.Color(0, 0, 255));
         labelPizzaCantRespuesta.setText("0");
 
-        botonImprimir.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        botonImprimir.setText("Imprimir");
-        botonImprimir.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,10 +136,7 @@ public class GUIPantallaPizzeria extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelVariedadRespuesta)
                             .addComponent(labelPorcionesRespuesta)
-                            .addComponent(labelTipoRespuesta)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(botonImprimir)))
+                            .addComponent(labelTipoRespuesta))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -174,9 +166,7 @@ public class GUIPantallaPizzeria extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelVariedad)
                     .addComponent(labelVariedadRespuesta))
-                .addGap(65, 65, 65)
-                .addComponent(botonImprimir)
-                .addGap(38, 38, 38)
+                .addGap(128, 128, 128)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPizzeriaPedidoResultado)
                     .addComponent(labelTotal))
@@ -222,7 +212,6 @@ public class GUIPantallaPizzeria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonImprimir;
     private javax.swing.JLabel labelCliente;
     private javax.swing.JLabel labelClienteRespuesta;
     private javax.swing.JLabel labelHora;

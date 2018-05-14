@@ -18,6 +18,7 @@ import sun.util.calendar.Gregorian;
 public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     
     private Pedido pedido;
+    
 
     /**
      * Creates new form NuevoPedido
