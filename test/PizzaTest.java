@@ -17,6 +17,7 @@ public class PizzaTest {
     private Pizza pizzaTest;
     @Before
     public void iniciar(){
+        //Muzzarella +50
         pizzaTest=new Pizza(8, Tipo.MOLDE, new Variedad("Muzzarella"));
     }
 

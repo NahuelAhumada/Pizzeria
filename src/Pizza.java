@@ -17,7 +17,7 @@ public class Pizza {
     private Variedad variedad;
 
     public Pizza(int tamanio, Tipo tipo, Variedad variedad) {
-        if (tamanio != 8 || tamanio != 10 || tamanio != 12) {
+        if (tamanio != 8 && tamanio != 10 && tamanio != 12) {
             throw new Error("Tamanio invalido");
         }
 
