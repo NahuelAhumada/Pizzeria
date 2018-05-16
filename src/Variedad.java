@@ -54,6 +54,14 @@ public class Variedad {
             ingredientes.add("Chedar");
 
         }
+        if(nombre.equals("Napolitana")){
+            this.precio=70.00f;
+            ingredientes.add("Muzarrella");
+            ingredientes.add("Jamon");
+            ingredientes.add("Tomate");
+            ingredientes.add("Salame");
+            ingredientes.add("Queso Rayado");
+        }
     }
 
     public float getPrecio() {
