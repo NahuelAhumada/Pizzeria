@@ -31,12 +31,12 @@ public class Variedad {
             this.precio = 50.00f;
             ingredientes.add("Tomate");
             ingredientes.add("Queso Muzzarella");
+            
         }
         if (nombre.equals("Jamon y Morrones")) {
             this.precio = 60.00f;
             ingredientes.add("Jamon");
             ingredientes.add("Tomate");
-
             ingredientes.add("Morron");
 
         }
@@ -61,6 +61,7 @@ public class Variedad {
             ingredientes.add("Tomate");
             ingredientes.add("Salame");
             ingredientes.add("Queso Rayado");
+            
         }
     }
 
