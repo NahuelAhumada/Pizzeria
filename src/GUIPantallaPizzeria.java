@@ -41,6 +41,8 @@ public class GUIPantallaPizzeria extends javax.swing.JFrame {
         labelTotal = new javax.swing.JLabel();
         labelPizzaCant = new javax.swing.JLabel();
         labelPizzaCantRespuesta = new javax.swing.JLabel();
+        botonCerrar = new javax.swing.JButton();
+        botonImprimir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,45 +96,63 @@ public class GUIPantallaPizzeria extends javax.swing.JFrame {
         labelPizzaCantRespuesta.setForeground(new java.awt.Color(0, 0, 255));
         labelPizzaCantRespuesta.setText("0");
 
+        botonCerrar.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
+        botonCerrar.setText("Cerrar");
+        botonCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eventoCerrarPestaña(evt);
+            }
+        });
+
+        botonImprimir.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        botonImprimir.setText("Imprimir");
+        botonImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imprimirTicket(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(botonImprimir)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonCerrar)
+                .addGap(38, 38, 38))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelTotal)
-                        .addGap(0, 110, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelCliente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(labelClienteRespuesta)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(labelHora)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelHoraRespuesta)
-                    .addComponent(labelPizzeriaPedidoResultado))
-                .addGap(56, 56, 56))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(labelPizzeriaPedido))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
+                        .addComponent(labelCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelClienteRespuesta))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelTipo)
                             .addComponent(labelPorciones)
                             .addComponent(labelVariedad)
-                            .addComponent(labelPizzaCant))
-                        .addGap(83, 83, 83)
+                            .addComponent(labelPizzaCant)
+                            .addComponent(labelTotal))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(labelPizzeriaPedidoResultado)
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelPizzaCantRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelHora)
                             .addComponent(labelVariedadRespuesta)
-                            .addComponent(labelPorcionesRespuesta)
-                            .addComponent(labelTipoRespuesta))))
+                            .addComponent(labelTipoRespuesta)
+                            .addComponent(labelPorcionesRespuesta))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(labelHoraRespuesta)))
+                .addGap(100, 100, 100))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(labelPizzeriaPedido)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -146,7 +166,7 @@ public class GUIPantallaPizzeria extends javax.swing.JFrame {
                     .addComponent(labelHoraRespuesta))
                 .addGap(18, 18, 18)
                 .addComponent(labelPizzeriaPedido)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPorciones)
                     .addComponent(labelPorcionesRespuesta))
@@ -162,15 +182,27 @@ public class GUIPantallaPizzeria extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPizzaCant)
                     .addComponent(labelPizzaCantRespuesta))
-                .addGap(81, 81, 81)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelPizzeriaPedidoResultado)
-                    .addComponent(labelTotal))
+                    .addComponent(labelTotal)
+                    .addComponent(labelPizzeriaPedidoResultado))
+                .addGap(18, 31, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void eventoCerrarPestaña(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eventoCerrarPestaña
+        this.dispose();
+    }//GEN-LAST:event_eventoCerrarPestaña
+
+    private void imprimirTicket(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imprimirTicket
+        this.print(getGraphics());
+    }//GEN-LAST:event_imprimirTicket
 
     /**
      * @param args the command line arguments
@@ -208,6 +240,8 @@ public class GUIPantallaPizzeria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonCerrar;
+    private javax.swing.JButton botonImprimir;
     private javax.swing.JLabel labelCliente;
     private javax.swing.JLabel labelClienteRespuesta;
     private javax.swing.JLabel labelHora;
