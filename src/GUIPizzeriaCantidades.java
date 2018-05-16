@@ -55,6 +55,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         labelErrorCantidad = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        LabelErrorHora = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -108,6 +109,9 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
 
         jLabel1.setText("Observaciones:");
 
+        LabelErrorHora.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelErrorHora.setForeground(new java.awt.Color(255, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -150,7 +154,10 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                                         .addComponent(labelErrorDemora, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
-                                        .addComponent(labelErrorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(labelErrorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(LabelErrorHora, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(21, 21, 21)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +182,9 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                     .addComponent(labelErrorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(textFieldHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(textFieldHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LabelErrorHora, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(labelHora, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,7 +221,30 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         nombreIngresado = (String) textFieldNombre.getText().trim();
         hora = textFieldHora.getText().trim();
         demoraIngresada = textFieldDemora.getText().trim();
-        if(nombreIngresado.isEmpty()||demoraIngresada.isEmpty()||cantidad.isEmpty()){
+        String [] horaArray=hora.split(":");
+        boolean horaValida=false;
+        if(horaArray.length==3){
+            try{
+                boolean corte=true;
+                for (int i = 0; i < horaArray.length&&corte; i++) {
+                    String tiempoString = horaArray[i].trim();
+                    if(!tiempoString.isEmpty()){
+                        Integer valor=Integer.valueOf(tiempoString);
+                        if(i==0&&valor>=24){
+                            corte=false;
+                        }else if(valor>=60){
+                            corte=false;
+                        }
+                    }  else{
+                        horaValida=false;
+                    }  
+                } horaValida=corte;
+            }catch(Exception e){
+                
+            }
+        }
+            
+        if(nombreIngresado.isEmpty()||demoraIngresada.isEmpty()||cantidad.isEmpty()||!horaValida){
             if(demoraIngresada.isEmpty()){
             labelErrorDemora.setText("Texto vacio");
             }else{
@@ -228,6 +260,11 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                 labelErrorCantidad.setText("Cantidad vacia");
             }else{
                 labelErrorCantidad.setText(null);
+            }
+            if(!horaValida){
+                LabelErrorHora.setText("Hora invalida");
+            }else{
+                LabelErrorHora.setText(null);
             }
                 
         }else {
@@ -310,6 +347,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LabelErrorHora;
     private javax.swing.JButton botonCalcularPedido;
     private javax.swing.JComboBox<String> comboBoxTamanio;
     private javax.swing.JComboBox<String> comboBoxTipo;
