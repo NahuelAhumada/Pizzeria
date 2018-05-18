@@ -223,24 +223,16 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         nombreIngresado = (String) textFieldNombre.getText().trim();
         hora = textFieldHora.getText().trim();
         demoraIngresada = textFieldDemora.getText().trim();
-        String [] horaArray=hora.split(":");
+        String [] horaArray=hora.trim().split(":");
         boolean horaValida=false;
         if(horaArray.length==3){
             try{
-                boolean corte=true;
-                for (int i = 0; i < horaArray.length&&corte; i++) {
-                    String tiempoString = horaArray[i].trim();
-                    if(!tiempoString.isEmpty()){
-                        Integer valor=Integer.valueOf(tiempoString);
-                        if(i==0&&valor>=24){
-                            corte=false;
-                        }else if(valor>=60){
-                            corte=false;
-                        }
-                    }  else{
-                        horaValida=false;
-                    }  
-                } horaValida=corte;
+                int horaActual=Integer.valueOf(horaArray[0]);
+                int minutosActual=Integer.valueOf(horaArray[1]);
+                int segundosActual=Integer.valueOf(horaArray[2]);
+                if(horaActual>=0&&minutosActual>=0&&segundosActual>=0){
+                    horaValida=(horaActual<24&&minutosActual<60&&segundosActual<60);
+                }
             }catch(Exception e){
                 
             }
@@ -388,7 +380,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         }else{
             formatoHora+=segundos;
         }
-        System.out.println(formatoHora);
+        
         textFieldHora.setText(formatoHora);
     }
 
