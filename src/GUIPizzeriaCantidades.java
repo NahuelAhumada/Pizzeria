@@ -218,6 +218,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void clickBotonCalcularPedido(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickBotonCalcularPedido
+        
         String nombreIngresado;String hora;String demoraIngresada;
         String cantidad=textFieldCantidad.getText().trim();
         nombreIngresado = (String) textFieldNombre.getText().trim();
@@ -300,13 +301,14 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             labelCosto.setText("$"+String.valueOf(pedido.getPrecio()));
             GUIPantallaPizzeria resultado=new GUIPantallaPizzeria();
             resultado.setVisible(true);
-            resultado.inicializar(nombreIngresado, hora, cantidad, String.valueOf(tamanioSeleccionado), tipo, selectedItem, pedido.getPrecio());
-        } }catch (NumberFormatException e) {
-            labelErrorDemora.setText("Dato Invalido");
+            resultado.inicializar(pedido);
+                }
+            } catch (NumberFormatException e) {
+                labelErrorDemora.setText("Dato Invalido");
+            }
+
         }
-        
-        }
-        
+
     }//GEN-LAST:event_clickBotonCalcularPedido
 
     /**

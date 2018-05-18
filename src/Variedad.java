@@ -13,18 +13,18 @@ import java.util.List;
  * @author ITUOM
  */
 public class Variedad {
-    private String nombre;
+    private String nombrePizza;
     private float precio=0;
     private List<String> ingredientes;
 
     public Variedad(String nombre, float precio, List<String> ingredientes) {
-        this.nombre = nombre;
+        this.nombrePizza = nombre;
         this.precio = precio;
         this.ingredientes = ingredientes;
     }
 
     public Variedad(String nombre) {
-        this.nombre = nombre;
+        this.nombrePizza = nombre;
 
         this.ingredientes = new ArrayList<>();
         if (nombre.equals("Muzzarella")) {
@@ -67,6 +67,10 @@ public class Variedad {
 
     public float getPrecio() {
         return precio;
+    }
+
+    public String getNombrePizza() {
+        return nombrePizza;
     }
 
 }
