@@ -12,6 +12,7 @@
 public class ItemPedido {
     private Pizza pizza;
     private int cantidad;
+    
 
     public ItemPedido(Pizza pizza, int cantidad) {
         if(cantidad<0){
@@ -23,4 +24,13 @@ public class ItemPedido {
     public float calcularCosto(){
         return pizza.calcularCosto()*cantidad;
     }
+
+    public Pizza getPizza() {
+        return pizza;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+    
 }

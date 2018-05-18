@@ -49,4 +49,16 @@ public class Pizza {
         resultado = variedad.getPrecio() + precioTamanio + precioTipo;
         return resultado;
     }
+
+    public int getTamanio() {
+        return tamanio;
+    }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
+
+    public Variedad getVariedad() {
+        return variedad;
+    }
 }
