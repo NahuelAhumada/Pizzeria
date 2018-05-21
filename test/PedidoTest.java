@@ -16,19 +16,19 @@ import org.junit.Before;
 public class PedidoTest {
     private Pizza pizzaPrueba;
     private Pedido pedidoTest;
-    private Calendar cal;
+    private Calendar calTest;
     @Before
     public void iniciar(){
         pizzaPrueba=new Pizza(8, Tipo.MOLDE, new Variedad("Muzzarella"));
-        cal=Calendar.getInstance();
-        cal.set(Calendar.HOUR_OF_DAY, 12);
-        cal.set(Calendar.MINUTE, 00);
-        cal.set(Calendar.SECOND, 0);
+        calTest=Calendar.getInstance();
+        calTest.set(Calendar.HOUR_OF_DAY, 12);
+        calTest.set(Calendar.MINUTE, 00);
+        calTest.set(Calendar.SECOND, 0);
         pedidoTest=new Pedido("Alfonso", "11:45:00", 20, new ItemPedido(pizzaPrueba, 2));
     }
     @Test
     public void deberiaDarQueElPedidoDe11y45EstaAtrasado() throws Exception {
-        assertTrue(pedidoTest.pedidoAtrasado(cal));
+        assertTrue(pedidoTest.pedidoAtrasado(calTest));
     }
     
 }

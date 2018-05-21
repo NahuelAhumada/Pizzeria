@@ -48,17 +48,16 @@ public class Pedido {
         return pedido;
     }
     public boolean pedidoAtrasado(Calendar horaActual)throws Exception{
-        Calendar cal=Calendar.getInstance();
+        Calendar horaPedido=Calendar.getInstance();
         String[]valores=horaCreacion.split(":");
         int hora=Integer.valueOf(valores[0]);
         int minutos=Integer.valueOf(valores[1]);
         int segundos=Integer.valueOf(valores[2]);
-        cal.set(Calendar.HOUR_OF_DAY, hora);
-        cal.set(Calendar.MINUTE,minutos);
-        cal.set(Calendar.SECOND, segundos);
-        cal.add(Calendar.MINUTE, tiempoDemoraMinutos);
-        
-        return horaActual.before(cal);
+        horaPedido.set(Calendar.HOUR_OF_DAY, hora);
+        horaPedido.set(Calendar.MINUTE,minutos);
+        horaPedido.set(Calendar.SECOND, segundos);
+        horaPedido.add(Calendar.MINUTE, tiempoDemoraMinutos);
+        return horaActual.before(horaPedido);
     }
     
 }
