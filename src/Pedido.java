@@ -57,7 +57,7 @@ public class Pedido {
         horaPedido.set(Calendar.MINUTE,minutos);
         horaPedido.set(Calendar.SECOND, segundos);
         horaPedido.add(Calendar.MINUTE, tiempoDemoraMinutos);
-        return horaActual.before(horaPedido);
+        return horaActual.after(horaPedido);
     }
     
 }

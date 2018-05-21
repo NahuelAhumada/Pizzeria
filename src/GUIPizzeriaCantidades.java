@@ -1,7 +1,9 @@
 
+import java.awt.Color;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.TimerTask;
 import sun.util.calendar.Gregorian;
 
 
@@ -18,6 +20,7 @@ import sun.util.calendar.Gregorian;
 public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     
     private Pedido pedido;
+    private GUIPantallaPedidos listado;
     
 
     /**
@@ -292,9 +295,10 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             ItemPedido cantidaPedida = new ItemPedido(pizzaPedida, cantidadReal);
             pedido = new Pedido(nombreIngresado, hora, demoraReal, cantidaPedida);
             labelCosto.setText("$"+String.valueOf(pedido.getPrecio()));
-            GUIPantallaPizzeria resultado=new GUIPantallaPizzeria();
-            resultado.setVisible(true);
-            resultado.inicializar(pedido);
+            
+            listado=new GUIPantallaPedidos();
+            listado.inicializar(pedido);
+            listado.setVisible(true);
                 }
             } catch (NumberFormatException e) {
                 labelErrorDemora.setText("Dato Invalido");
@@ -385,5 +389,6 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
 
         textFieldHora.setText(formatoHora);
     }
+    
 
 }
