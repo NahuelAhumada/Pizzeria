@@ -191,8 +191,9 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelErrorDemora, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelDemora)
-                    .addComponent(textFieldDemora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(labelDemora)
+                        .addComponent(textFieldDemora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(comboBoxTamanio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -335,9 +336,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUIPizzeriaCantidades().setVisible(true);
-                
-                
-                
+
             }
         });
     }
@@ -363,28 +362,28 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldHora;
     private javax.swing.JTextField textFieldNombre;
     // End of variables declaration//GEN-END:variables
-    private void hourConfig(){
-        Date date= new Date();
-        Calendar calendar= GregorianCalendar.getInstance();
+    
+    private void hourConfig() {
+        Date date = new Date();
+        Calendar calendar = GregorianCalendar.getInstance();
         calendar.setTime(date);
-        int hora=calendar.get(Calendar.HOUR_OF_DAY);
-        int minutos=calendar.get(Calendar.MINUTE);
-        int segundos=calendar.get(Calendar.SECOND);
-        
-        String formatoHora=hora+":";
-        if(minutos<10){
-            formatoHora+="0"+minutos+":";
-        }else{
-            formatoHora+=minutos+":";
+        int hora = calendar.get(Calendar.HOUR_OF_DAY);
+        int minutos = calendar.get(Calendar.MINUTE);
+        int segundos = calendar.get(Calendar.SECOND);
+
+        String formatoHora = hora + ":";
+        if (minutos < 10) {
+            formatoHora += "0" + minutos + ":";
+        } else {
+            formatoHora += minutos + ":";
         }
-        if(segundos<10){
-            formatoHora+="0"+segundos;
-        }else{
-            formatoHora+=segundos;
+        if (segundos < 10) {
+            formatoHora += "0" + segundos;
+        } else {
+            formatoHora += segundos;
         }
-        
+
         textFieldHora.setText(formatoHora);
     }
-
 
 }
