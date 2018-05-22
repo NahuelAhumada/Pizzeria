@@ -64,10 +64,10 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        labelCliente.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelCliente.setText("Cliente: ");
 
-        labelHora.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelHora.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelHora.setText("Hora:");
 
         labelPizzeriaPedidoResultado.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -90,10 +90,10 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         labelHoraRespuesta.setForeground(new java.awt.Color(0, 204, 51));
         labelHoraRespuesta.setText("0:00");
 
-        labelTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelTotal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelTotal.setText("Precio Total :");
 
-        labelPizzaCant.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelPizzaCant.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelPizzaCant.setText("Cantidad:");
 
         labelPizzaCantRespuesta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -108,7 +108,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
             }
         });
 
-        botonImprimir.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        botonImprimir.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
         botonImprimir.setText("Imprimir");
         botonImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,35 +116,51 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
             }
         });
 
-        labelObservaciones.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelObservaciones.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelObservaciones.setText("Observaciones:");
 
         labelObservacionesRespuesta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
+        LbaelCliente1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         LbaelCliente1.setText("Cliente: ");
 
+        LabelClienteRespuesta1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        LabelClienteRespuesta1.setForeground(new java.awt.Color(0, 0, 255));
         LabelClienteRespuesta1.setText("jLabel1");
 
+        LabelHora1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         LabelHora1.setText("Hora:");
 
-        LabelHoraRespuesta1.setText("0:0");
+        LabelHoraRespuesta1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        LabelHoraRespuesta1.setForeground(new java.awt.Color(0, 204, 51));
+        LabelHoraRespuesta1.setText("0:00");
 
+        labelVariedadResupuesta1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         labelVariedadResupuesta1.setText("Var1");
 
+        labelTipoResupuesta1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         labelTipoResupuesta1.setText("jLabel1");
 
+        labelPorcionesRespuesta1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         labelPorcionesRespuesta1.setText("jLabel1");
 
+        labelCantidad1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelCantidad1.setText("Cantidad:");
 
+        labelCantidadResultado1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelCantidadResultado1.setForeground(new java.awt.Color(0, 0, 255));
         labelCantidadResultado1.setText("0");
 
-        labelPrecioTotal1.setText("PrecioTotal :");
+        labelPrecioTotal1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelPrecioTotal1.setText("Precio Total :");
 
+        labelResultadoTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         labelResultadoTotal.setText("jLabel1");
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("jLabel1");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -152,76 +168,75 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(labelObservacionesRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelObservaciones)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(botonImprimir))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelCliente)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(labelClienteRespuesta)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botonCerrar))
+                    .addComponent(labelObservaciones, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(labelCliente)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelClienteRespuesta))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelVariedadRespuesta)
+                                    .addComponent(jLabel1))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(187, 187, 187)
-                                                .addComponent(labelHora))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(LbaelCliente1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(LabelClienteRespuesta1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(LabelHora1)))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(labelHoraRespuesta)
-                                            .addComponent(LabelHoraRespuesta1)))
-                                    .addComponent(labelVariedadResupuesta1)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(labelVariedadRespuesta)
-                                            .addComponent(jLabel1))
                                         .addGap(92, 92, 92)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2)
-                                            .addComponent(labelTipoRespuesta)
-                                            .addComponent(labelTipoResupuesta1))))
-                                .addGap(99, 99, 99)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelPorcionesRespuesta)
-                                    .addComponent(labelPorcionesRespuesta1))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(84, 84, 84)
-                                        .addComponent(labelPizzaCant))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(78, 78, 78)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(labelTipoRespuesta)
+                                            .addComponent(labelTipoResupuesta1))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(labelPorcionesRespuesta1)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addGap(131, 131, 131)
+                                                .addComponent(labelPorcionesRespuesta)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(labelCantidad1)
+                                            .addComponent(labelPizzaCant))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(labelCantidad1)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelPizzaCantRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelCantidadResultado1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(labelCantidadResultado1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(labelPrecioTotal1))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(labelPizzaCantRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(labelTotal))))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(187, 187, 187)
+                                        .addComponent(labelHora))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(LbaelCliente1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(LabelClienteRespuesta1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(LabelHora1)))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelPrecioTotal1)
-                                    .addComponent(labelTotal))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(labelResultadoTotal)
-                                    .addComponent(labelPizzeriaPedidoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 23, Short.MAX_VALUE)))))
-                .addGap(38, 38, 38))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(labelHoraRespuesta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(LabelHoraRespuesta1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(labelVariedadResupuesta1))
+                        .addGap(75, 75, 75)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelResultadoTotal)
+                            .addComponent(labelPizzeriaPedidoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(84, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonCerrar)
+                    .addComponent(botonImprimir)
+                    .addComponent(labelObservacionesRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,11 +257,11 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
                         .addComponent(labelPizzaCantRespuesta)
                         .addComponent(labelTotal))
                     .addComponent(labelPizzeriaPedidoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelObservaciones)
-                    .addComponent(botonImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
+                .addGap(56, 56, 56)
+                .addComponent(labelObservaciones)
+                .addGap(29, 29, 29)
+                .addComponent(botonImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LbaelCliente1)
                     .addComponent(LabelClienteRespuesta1)
@@ -267,9 +282,9 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
                         .addComponent(jLabel2)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
