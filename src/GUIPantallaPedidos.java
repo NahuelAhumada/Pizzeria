@@ -404,6 +404,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void inicializar (Pedido pedido) {
+        if(pedidos[0]==null){
         pedidos[0]=pedido;
         labelClienteRespuesta.setText(pedido.getNombreCliente());
         labelHoraRespuesta.setText(pedido.getHoraCreacion());
@@ -412,14 +413,17 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         labelTipoRespuesta.setText(pedido.getPedido().getPizza().getTipo().name());
         labelVariedadRespuesta.setText(pedido.getPedido().getPizza().getVariedad().getNombrePizza());
         labelPizzeriaPedidoResultado.setText("$" + String.valueOf(pedido.getPedido().calcularCosto()));
-        inicializaTask();
+        inicializaTask(pedidos[0]);
+        }else{
+            pedidos[1]=pedido;
+        }
     }
-    public void inicializaTask(){
+    public void inicializaTask(Pedido pedidoTask){
         TimerTask task=new TimerTask() {
             @Override
             public void run() {
                 try{
-                    if(pedidos[0].pedidoAtrasado(Calendar.getInstance())){
+                    if(pedidoTask.pedidoAtrasado(Calendar.getInstance())){
                         labelHoraRespuesta.setForeground(Color.red);
                     }
                     
