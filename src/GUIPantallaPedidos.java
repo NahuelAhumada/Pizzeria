@@ -172,6 +172,11 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
 
         botonAgregarPedido.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
         botonAgregarPedido.setText("Agregar Pedido");
+        botonAgregarPedido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarPedidoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -320,6 +325,12 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
     private void imprimirTicket(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imprimirTicket
         this.print(getGraphics());
     }//GEN-LAST:event_imprimirTicket
+
+    private void botonAgregarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarPedidoActionPerformed
+        GUIPizzeriaCantidades nuevaPizza=new GUIPizzeriaCantidades();
+        nuevaPizza.setVisible(true);
+        nuevaPizza.setGui(this);
+    }//GEN-LAST:event_botonAgregarPedidoActionPerformed
 
     /**
      * @param args the command line arguments
