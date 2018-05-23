@@ -59,7 +59,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         labelCantidad1 = new javax.swing.JLabel();
         labelCantidadResultado1 = new javax.swing.JLabel();
         labelPrecioTotal1 = new javax.swing.JLabel();
-        labelResultadoTotal = new javax.swing.JLabel();
+        labelResultadoTotal1 = new javax.swing.JLabel();
         labelObservacion1 = new javax.swing.JLabel();
         labelObsRespuesta1 = new javax.swing.JLabel();
         botonImpimir1 = new javax.swing.JButton();
@@ -156,8 +156,8 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         labelPrecioTotal1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelPrecioTotal1.setText("Precio Total :");
 
-        labelResultadoTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        labelResultadoTotal.setText("jLabel1");
+        labelResultadoTotal1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelResultadoTotal1.setText("jLabel1");
 
         labelObservacion1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         labelObservacion1.setText("jLabel1");
@@ -232,7 +232,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
                             .addComponent(labelVariedadResupuesta1))
                         .addGap(75, 75, 75)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelResultadoTotal)
+                            .addComponent(labelResultadoTotal1)
                             .addComponent(labelPizzeriaPedidoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(84, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -281,7 +281,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
                     .addComponent(labelCantidad1)
                     .addComponent(labelCantidadResultado1)
                     .addComponent(labelPrecioTotal1)
-                    .addComponent(labelResultadoTotal))
+                    .addComponent(labelResultadoTotal1))
                 .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelObservacionesRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -366,7 +366,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
     private javax.swing.JLabel labelPorcionesRespuesta;
     private javax.swing.JLabel labelPorcionesRespuesta1;
     private javax.swing.JLabel labelPrecioTotal1;
-    private javax.swing.JLabel labelResultadoTotal;
+    private javax.swing.JLabel labelResultadoTotal1;
     private javax.swing.JLabel labelTipoRespuesta;
     private javax.swing.JLabel labelTipoResupuesta1;
     private javax.swing.JLabel labelTotal;
@@ -417,5 +417,10 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         LabelHora1.setVisible(false);
         LabelHoraRespuesta1.setVisible(false);
         botonImpimir1.setVisible(false);
+        labelObservacion1.setVisible(false);
+        labelObsRespuesta1.setVisible(false);
+        labelObservacion1.setVisible(false);
+        labelResultadoTotal1.setVisible(false);
+        
     }
 }
