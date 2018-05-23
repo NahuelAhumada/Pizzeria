@@ -21,6 +21,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
      */
     public GUIPantallaPedidos() {
         initComponents();
+        inicioOculto();
         
     }
 
@@ -48,7 +49,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         botonImprimir = new javax.swing.JButton();
         labelObservaciones = new javax.swing.JLabel();
         labelObservacionesRespuesta = new javax.swing.JLabel();
-        LbaelCliente1 = new javax.swing.JLabel();
+        LabelCliente1 = new javax.swing.JLabel();
         LabelClienteRespuesta1 = new javax.swing.JLabel();
         LabelHora1 = new javax.swing.JLabel();
         LabelHoraRespuesta1 = new javax.swing.JLabel();
@@ -59,8 +60,9 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         labelCantidadResultado1 = new javax.swing.JLabel();
         labelPrecioTotal1 = new javax.swing.JLabel();
         labelResultadoTotal = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        labelObservacion1 = new javax.swing.JLabel();
+        labelObsRespuesta1 = new javax.swing.JLabel();
+        botonImpimir1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -121,8 +123,8 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
 
         labelObservacionesRespuesta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        LbaelCliente1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        LbaelCliente1.setText("Cliente: ");
+        LabelCliente1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        LabelCliente1.setText("Cliente: ");
 
         LabelClienteRespuesta1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         LabelClienteRespuesta1.setForeground(new java.awt.Color(0, 0, 255));
@@ -157,11 +159,14 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         labelResultadoTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         labelResultadoTotal.setText("jLabel1");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel1.setText("jLabel1");
+        labelObservacion1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelObservacion1.setText("jLabel1");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setText("jLabel2");
+        labelObsRespuesta1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelObsRespuesta1.setText("jLabel2");
+
+        botonImpimir1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        botonImpimir1.setText("Imprimir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,11 +185,11 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(labelVariedadRespuesta)
-                                    .addComponent(jLabel1))
+                                    .addComponent(labelObservacion1))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(92, 92, 92)
-                                        .addComponent(jLabel2))
+                                        .addComponent(labelObsRespuesta1))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(78, 78, 78)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,7 +220,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
                                         .addGap(187, 187, 187)
                                         .addComponent(labelHora))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(LbaelCliente1)
+                                        .addComponent(LabelCliente1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(LabelClienteRespuesta1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -233,6 +238,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonImpimir1)
                     .addComponent(botonCerrar)
                     .addComponent(botonImprimir)
                     .addComponent(labelObservacionesRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -263,7 +269,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
                 .addComponent(botonImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LbaelCliente1)
+                    .addComponent(LabelCliente1)
                     .addComponent(LabelClienteRespuesta1)
                     .addComponent(LabelHora1)
                     .addComponent(LabelHoraRespuesta1))
@@ -280,11 +286,13 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelObservacionesRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel2)))
+                        .addComponent(labelObservacion1)
+                        .addComponent(labelObsRespuesta1)))
                 .addGap(18, 18, 18)
+                .addComponent(botonImpimir1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
                 .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addGap(54, 54, 54))
         );
 
         pack();
@@ -335,20 +343,21 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LabelCliente1;
     private javax.swing.JLabel LabelClienteRespuesta1;
     private javax.swing.JLabel LabelHora1;
     private javax.swing.JLabel LabelHoraRespuesta1;
-    private javax.swing.JLabel LbaelCliente1;
     private javax.swing.JButton botonCerrar;
+    private javax.swing.JButton botonImpimir1;
     private javax.swing.JButton botonImprimir;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel labelCantidad1;
     private javax.swing.JLabel labelCantidadResultado1;
     private javax.swing.JLabel labelCliente;
     private javax.swing.JLabel labelClienteRespuesta;
     private javax.swing.JLabel labelHora;
     private javax.swing.JLabel labelHoraRespuesta;
+    private javax.swing.JLabel labelObsRespuesta1;
+    private javax.swing.JLabel labelObservacion1;
     private javax.swing.JLabel labelObservaciones;
     private javax.swing.JLabel labelObservacionesRespuesta;
     private javax.swing.JLabel labelPizzaCant;
@@ -396,4 +405,17 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         time.schedule(task, 3000, 60000);
     }
 
+    public void inicioOculto(){
+        labelCantidad1.setVisible(false);
+        labelCantidadResultado1.setVisible(false);
+        labelPorcionesRespuesta1.setVisible(false);
+        labelPrecioTotal1.setVisible(false);
+        labelTipoResupuesta1.setVisible(false);
+        labelVariedadResupuesta1.setVisible(false);
+        LabelClienteRespuesta1.setVisible(false);
+        LabelCliente1.setVisible(false);
+        LabelHora1.setVisible(false);
+        LabelHoraRespuesta1.setVisible(false);
+        botonImpimir1.setVisible(false);
+    }
 }
