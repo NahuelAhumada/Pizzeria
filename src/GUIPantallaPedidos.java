@@ -64,6 +64,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         labelObservacion1 = new javax.swing.JLabel();
         labelObsRespuesta1 = new javax.swing.JLabel();
         botonImpimir1 = new javax.swing.JButton();
+        botonAgregarPedido = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -169,6 +170,9 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         botonImpimir1.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
         botonImpimir1.setText("Imprimir");
 
+        botonAgregarPedido.setFont(new java.awt.Font("Tw Cen MT Condensed", 1, 14)); // NOI18N
+        botonAgregarPedido.setText("Agregar Pedido");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -197,10 +201,12 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
                                             .addComponent(labelTipoRespuesta)
                                             .addComponent(labelTipoResupuesta1))
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(labelPorcionesRespuesta1)
                                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                                 .addGap(131, 131, 131)
-                                                .addComponent(labelPorcionesRespuesta)))
+                                                .addComponent(labelPorcionesRespuesta))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(92, 92, 92)
+                                                .addComponent(labelPorcionesRespuesta1)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 115, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(labelCantidad1)
@@ -216,21 +222,24 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(labelTotal))))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelVariedadResupuesta1)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(187, 187, 187)
-                                        .addComponent(labelHora))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(LabelCliente1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(LabelClienteRespuesta1)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(LabelHora1)))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(labelHoraRespuesta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(LabelHoraRespuesta1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addComponent(labelVariedadResupuesta1))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(187, 187, 187)
+                                                .addComponent(labelHora))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(LabelCliente1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(LabelClienteRespuesta1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(LabelHora1)))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(labelHoraRespuesta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(LabelHoraRespuesta1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(75, 75, 75)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelResultadoTotal1)
@@ -239,6 +248,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(botonAgregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonImpimir1)
                     .addComponent(botonCerrar)
                     .addComponent(botonImprimir)
@@ -291,10 +301,14 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
                         .addComponent(labelObsRespuesta1)))
                 .addGap(18, 18, 18)
                 .addComponent(botonImpimir1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
+                .addGap(53, 53, 53)
+                .addComponent(botonAgregarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54))
         );
+
+        botonAgregarPedido.getAccessibleContext().setAccessibleName("AgregarPedido");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -348,6 +362,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
     private javax.swing.JLabel LabelClienteRespuesta1;
     private javax.swing.JLabel LabelHora1;
     private javax.swing.JLabel LabelHoraRespuesta1;
+    private javax.swing.JButton botonAgregarPedido;
     private javax.swing.JButton botonCerrar;
     private javax.swing.JButton botonImpimir1;
     private javax.swing.JButton botonImprimir;
