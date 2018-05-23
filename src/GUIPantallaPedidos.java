@@ -323,6 +323,8 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
     }//GEN-LAST:event_eventoCerrarPestaña
 
     private void imprimirTicket(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imprimirTicket
+        GUIFacturaImprimida factura=new GUIFacturaImprimida();
+        factura.setVisible(true);
         this.print(getGraphics());
     }//GEN-LAST:event_imprimirTicket
 
