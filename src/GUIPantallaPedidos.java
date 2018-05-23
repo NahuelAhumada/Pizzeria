@@ -16,13 +16,14 @@ import java.util.TimerTask;
  */
 public class GUIPantallaPedidos extends javax.swing.JFrame {
     private Pedido[]pedidos=new Pedido[5];
-    javax.swing.JLabel[]labels;
+    
     /**
      * Creates new form GUIPantallaPizzeria
      */
     public GUIPantallaPedidos() {
         initComponents();
         inicioOculto();
+        inicializaTask();
         
     }
 
@@ -50,10 +51,10 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         botonImprimir = new javax.swing.JButton();
         labelObservaciones = new javax.swing.JLabel();
         labelObservacionesRespuesta = new javax.swing.JLabel();
-        LabelCliente1 = new javax.swing.JLabel();
-        LabelClienteRespuesta1 = new javax.swing.JLabel();
-        LabelHora1 = new javax.swing.JLabel();
-        LabelHoraRespuesta1 = new javax.swing.JLabel();
+        labelCliente1 = new javax.swing.JLabel();
+        labelClienteRespuesta1 = new javax.swing.JLabel();
+        labelHora1 = new javax.swing.JLabel();
+        labelHoraRespuesta1 = new javax.swing.JLabel();
         labelVariedadResupuesta1 = new javax.swing.JLabel();
         labelTipoResupuesta1 = new javax.swing.JLabel();
         labelPorcionesRespuesta1 = new javax.swing.JLabel();
@@ -125,19 +126,19 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
 
         labelObservacionesRespuesta.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
-        LabelCliente1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        LabelCliente1.setText("Cliente: ");
+        labelCliente1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelCliente1.setText("Cliente: ");
 
-        LabelClienteRespuesta1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        LabelClienteRespuesta1.setForeground(new java.awt.Color(0, 0, 255));
-        LabelClienteRespuesta1.setText("jLabel1");
+        labelClienteRespuesta1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelClienteRespuesta1.setForeground(new java.awt.Color(0, 0, 255));
+        labelClienteRespuesta1.setText("jLabel1");
 
-        LabelHora1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        LabelHora1.setText("Hora:");
+        labelHora1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelHora1.setText("Hora:");
 
-        LabelHoraRespuesta1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        LabelHoraRespuesta1.setForeground(new java.awt.Color(0, 204, 51));
-        LabelHoraRespuesta1.setText("0:00");
+        labelHoraRespuesta1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        labelHoraRespuesta1.setForeground(new java.awt.Color(0, 204, 51));
+        labelHoraRespuesta1.setText("0:00");
 
         labelVariedadResupuesta1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         labelVariedadResupuesta1.setText("Var1");
@@ -235,15 +236,15 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
                                                 .addGap(187, 187, 187)
                                                 .addComponent(labelHora))
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(LabelCliente1)
+                                                .addComponent(labelCliente1)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(LabelClienteRespuesta1)
+                                                .addComponent(labelClienteRespuesta1)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(LabelHora1)))
+                                                .addComponent(labelHora1)))
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(labelHoraRespuesta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(LabelHoraRespuesta1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                            .addComponent(labelHoraRespuesta1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(75, 75, 75)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -285,10 +286,10 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
                 .addComponent(botonImprimir, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelCliente1)
-                    .addComponent(LabelClienteRespuesta1)
-                    .addComponent(LabelHora1)
-                    .addComponent(LabelHoraRespuesta1))
+                    .addComponent(labelCliente1)
+                    .addComponent(labelClienteRespuesta1)
+                    .addComponent(labelHora1)
+                    .addComponent(labelHoraRespuesta1))
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelVariedadResupuesta1)
@@ -371,10 +372,6 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel LabelCliente1;
-    private javax.swing.JLabel LabelClienteRespuesta1;
-    private javax.swing.JLabel LabelHora1;
-    private javax.swing.JLabel LabelHoraRespuesta1;
     private javax.swing.JButton botonAgregarPedido;
     private javax.swing.JButton botonCerrar;
     private javax.swing.JButton botonImpimir1;
@@ -382,9 +379,13 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
     private javax.swing.JLabel labelCantidad1;
     private javax.swing.JLabel labelCantidadResultado1;
     private javax.swing.JLabel labelCliente;
+    private javax.swing.JLabel labelCliente1;
     private javax.swing.JLabel labelClienteRespuesta;
+    private javax.swing.JLabel labelClienteRespuesta1;
     private javax.swing.JLabel labelHora;
+    private javax.swing.JLabel labelHora1;
     private javax.swing.JLabel labelHoraRespuesta;
+    private javax.swing.JLabel labelHoraRespuesta1;
     private javax.swing.JLabel labelObsRespuesta1;
     private javax.swing.JLabel labelObservacion1;
     private javax.swing.JLabel labelObservaciones;
@@ -413,20 +414,30 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         labelTipoRespuesta.setText(pedido.getPedido().getPizza().getTipo().name());
         labelVariedadRespuesta.setText(pedido.getPedido().getPizza().getVariedad().getNombrePizza());
         labelPizzeriaPedidoResultado.setText("$" + String.valueOf(pedido.getPedido().calcularCosto()));
-        inicializaTask(pedidos[0]);
+        
         }else{
             pedidos[1]=pedido;
+            labelCliente1.setVisible(true);
+            labelClienteRespuesta1.setText(pedido.getNombreCliente());
+            labelClienteRespuesta1.setVisible(true);
+            labelHora1.setVisible(true);
+            labelHoraRespuesta1.setVisible(true);
+            labelHoraRespuesta1.setText(pedido.getHoraCreacion());
+            botonImpimir1.setVisible(true);
+            
         }
     }
-    public void inicializaTask(Pedido pedidoTask){
+    public void inicializaTask(){
         TimerTask task=new TimerTask() {
             @Override
             public void run() {
                 try{
-                    if(pedidoTask.pedidoAtrasado(Calendar.getInstance())){
+                    if(pedidos[0].pedidoAtrasado(Calendar.getInstance())){
                         labelHoraRespuesta.setForeground(Color.red);
                     }
-                    
+                    if(pedidos[1].pedidoAtrasado(Calendar.getInstance())){
+                        labelHoraRespuesta1.setForeground(Color.red);
+                    }
                 }catch (Exception e){
                     
                 }
@@ -437,7 +448,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         Timer time =new Timer();
         time.schedule(task, 3000, 15000);
     }
-
+        
     public void inicioOculto(){
         labelCantidad1.setVisible(false);
         labelCantidadResultado1.setVisible(false);
@@ -445,10 +456,10 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         labelPrecioTotal1.setVisible(false);
         labelTipoResupuesta1.setVisible(false);
         labelVariedadResupuesta1.setVisible(false);
-        LabelClienteRespuesta1.setVisible(false);
-        LabelCliente1.setVisible(false);
-        LabelHora1.setVisible(false);
-        LabelHoraRespuesta1.setVisible(false);
+        labelClienteRespuesta1.setVisible(false);
+        labelCliente1.setVisible(false);
+        labelHora1.setVisible(false);
+        labelHoraRespuesta1.setVisible(false);
         botonImpimir1.setVisible(false);
         labelObservacion1.setVisible(false);
         labelObsRespuesta1.setVisible(false);

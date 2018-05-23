@@ -91,17 +91,17 @@
                                               <Component id="labelHora" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" attributes="0">
-                                              <Component id="LabelCliente1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelCliente1" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="LabelClienteRespuesta1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelClienteRespuesta1" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="LabelHora1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labelHora1" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="labelHoraRespuesta" max="32767" attributes="0"/>
-                                          <Component id="LabelHoraRespuesta1" max="32767" attributes="0"/>
+                                          <Component id="labelHoraRespuesta1" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -158,10 +158,10 @@
               <Component id="botonImprimir" min="-2" pref="39" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="LabelCliente1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="LabelClienteRespuesta1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="LabelHora1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="LabelHoraRespuesta1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelCliente1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelClienteRespuesta1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelHora1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="labelHoraRespuesta1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -329,7 +329,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="LabelCliente1">
+    <Component class="javax.swing.JLabel" name="labelCliente1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="14" style="0"/>
@@ -337,7 +337,7 @@
         <Property name="text" type="java.lang.String" value="Cliente: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="LabelClienteRespuesta1">
+    <Component class="javax.swing.JLabel" name="labelClienteRespuesta1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
@@ -348,7 +348,7 @@
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="LabelHora1">
+    <Component class="javax.swing.JLabel" name="labelHora1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="14" style="0"/>
@@ -356,7 +356,7 @@
         <Property name="text" type="java.lang.String" value="Hora:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="LabelHoraRespuesta1">
+    <Component class="javax.swing.JLabel" name="labelHoraRespuesta1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
