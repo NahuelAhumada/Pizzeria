@@ -16,6 +16,7 @@ import java.util.TimerTask;
  */
 public class GUIPantallaPedidos extends javax.swing.JFrame {
     private Pedido[]pedidos=new Pedido[5];
+    javax.swing.JLabel[]labels;
     /**
      * Creates new form GUIPantallaPizzeria
      */
@@ -402,7 +403,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
             }
         };
         Timer time =new Timer();
-        time.schedule(task, 3000, 60000);
+        time.schedule(task, 3000, 15000);
     }
 
     public void inicioOculto(){
