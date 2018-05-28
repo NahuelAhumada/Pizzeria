@@ -293,7 +293,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             }
             Pizza pizzaPedida = new Pizza(tamanioSeleccionado, tipoSeleccionado, variedadDeLaPizza);
             ItemPedido cantidaPedida = new ItemPedido(pizzaPedida, cantidadReal);
-            pedido = new Pedido(nombreIngresado, hora, demoraReal, cantidaPedida,labelObservaciones.getText());
+            pedido = new Pedido(nombreIngresado, hora, demoraReal, cantidaPedida,textFieldAgregar.getText());
             labelCosto.setText("$"+String.valueOf(pedido.getPrecio()));
             try{
                 listaPedidos.inicializar(pedido);

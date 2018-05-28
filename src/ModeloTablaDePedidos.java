@@ -87,6 +87,10 @@ public class ModeloTablaDePedidos implements TableModel {
             valor = String.valueOf(pedido.getPedido().getPizza().getTamanio()) + " Porc. ";
         } else if (columnIndex == 6) {
             valor = String.valueOf(pedido.getPedido().getCantidad());
+        } else if(columnIndex == 7){
+            valor =String.valueOf(pedido.getPrecio());
+        }else{
+            valor=pedido.getObservaciones();
         }
         return valor;
     }
