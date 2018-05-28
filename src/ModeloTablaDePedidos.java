@@ -102,16 +102,16 @@ public class ModeloTablaDePedidos implements TableModel {
         this.listeners.remove(1);
     }
     
-    public void agregarPedido(Pedido pedido){
+    public void agregarPedido(Pedido pedido) {
         this.pedidos.add(pedido);
-        
-        TableModelEvent evento = new TableModelEvent
-        (this, this.pedidos.size() - 1, this.pedidos.size() - 1,
-        TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT);
-        
-        for (TableModelListener listener : this.listeners){
+
+        TableModelEvent evento = new TableModelEvent(this,
+                this.pedidos.size() - 1, this.pedidos.size() - 1,
+                TableModelEvent.ALL_COLUMNS, TableModelEvent.INSERT);
+
+        for (TableModelListener listener : this.listeners) {
             listener.tableChanged(evento);
         }
     }
-    
+
 }
