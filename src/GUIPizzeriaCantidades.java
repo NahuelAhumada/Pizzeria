@@ -47,7 +47,6 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         textFieldNombre = new javax.swing.JTextField();
         textFieldHora = new javax.swing.JTextField();
         textFieldDemora = new javax.swing.JTextField();
-        labelCosto = new javax.swing.JLabel();
         comboBoxTamanio = new javax.swing.JComboBox<>();
         comboBoxTipo = new javax.swing.JComboBox<>();
         comboBoxVariedad = new javax.swing.JComboBox<>();
@@ -84,8 +83,6 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         textFieldHora.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         textFieldDemora.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-
-        labelCosto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
 
         comboBoxTamanio.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         comboBoxTamanio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8", "10", "12" }));
@@ -172,8 +169,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                                         .addComponent(textFieldAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addContainerGap(74, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(labelCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(botonCalcularPedido)
                         .addGap(113, 113, 113))))
         );
@@ -212,9 +208,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                     .addComponent(labelObservaciones)
                     .addComponent(textFieldAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelCosto, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonCalcularPedido))
+                .addComponent(botonCalcularPedido)
                 .addGap(17, 17, 17))
         );
 
@@ -294,7 +288,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             Pizza pizzaPedida = new Pizza(tamanioSeleccionado, tipoSeleccionado, variedadDeLaPizza);
             ItemPedido cantidaPedida = new ItemPedido(pizzaPedida, cantidadReal);
             pedido = new Pedido(nombreIngresado, hora, demoraReal, cantidaPedida,textFieldAgregar.getText());
-            labelCosto.setText("$"+String.valueOf(pedido.getPrecio()));
+            
             try{
                 listaPedidos.inicializar(pedido);
                 this.setVisible(false);
@@ -354,7 +348,6 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboBoxTamanio;
     private javax.swing.JComboBox<String> comboBoxTipo;
     private javax.swing.JComboBox<String> comboBoxVariedad;
-    private javax.swing.JLabel labelCosto;
     private javax.swing.JLabel labelDemora;
     private javax.swing.JLabel labelErrorCantidad;
     private javax.swing.JLabel labelErrorDemora;

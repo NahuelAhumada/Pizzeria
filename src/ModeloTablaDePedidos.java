@@ -88,7 +88,7 @@ public class ModeloTablaDePedidos implements TableModel {
         } else if (columnIndex == 6) {
             valor = String.valueOf(pedido.getPedido().getCantidad());
         } else if(columnIndex == 7){
-            valor =String.valueOf(pedido.getPrecio());
+            valor ="$"+String.valueOf(pedido.getPrecio());
         }else{
             valor=pedido.getObservaciones();
         }
