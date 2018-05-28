@@ -10,12 +10,14 @@
  */
 public class GUITablaDePedidos extends javax.swing.JFrame {
 
+    private ModeloTablaDePedidos modelo;
+
     /**
      * Creates new form GUITablaDePedidos
      */
     public GUITablaDePedidos() {
         initComponents();
-        inicializar();
+        inicializarTabla();
     }
 
     /**
@@ -48,6 +50,11 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
 
         boton.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         boton.setText("Agregar");
+        boton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarPedido(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,6 +81,13 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void agregarPedido(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarPedido
+
+        GUIPizzeriaCantidades nuevaPizza = new GUIPizzeriaCantidades();
+        nuevaPizza.setVisible(true);
+        nuevaPizza.setGui(this);
+    }//GEN-LAST:event_agregarPedido
 
     /**
      * @param args the command line arguments
@@ -115,8 +129,15 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
-    public void inicializar(){
-        ModeloTablaDePedidos misPedidos= new ModeloTablaDePedidos();
-        tabla.setModel(misPedidos);
+
+    public void inicializarTabla() {
+        modelo = new ModeloTablaDePedidos();
+        tabla.setModel(modelo);
+
     }
+
+    public void inicializar(Pedido pedido) {
+        modelo.agregarPedido(pedido);
+    }
+
 }
