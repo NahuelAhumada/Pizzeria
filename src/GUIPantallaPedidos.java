@@ -338,7 +338,7 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
     private void botonAgregarPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarPedidoActionPerformed
         GUIPizzeriaCantidades nuevaPizza=new GUIPizzeriaCantidades();
         nuevaPizza.setVisible(true);
-        nuevaPizza.setGui(this);
+        //nuevaPizza.setGui(this);
     }//GEN-LAST:event_botonAgregarPedidoActionPerformed
 
     /**

@@ -19,6 +19,10 @@ import javax.swing.table.TableModel;
 public class ModeloTablaDePedidos implements TableModel {
     private List<Pedido>listaPedidos=new ArrayList();
     private List<TableModelListener> listeners = new ArrayList<TableModelListener>();
+
+    public List<Pedido> getListaPedidos() {
+        return listaPedidos;
+    }
             
     @Override
     public int getRowCount() {
