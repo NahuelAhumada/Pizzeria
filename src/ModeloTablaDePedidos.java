@@ -28,29 +28,27 @@ public class ModeloTablaDePedidos implements TableModel {
 
     @Override
     public String getColumnName(int i) {
-        String resultado="";
-        if(i==0){
-            resultado="Cliente";
-        }else if(i==1){
-            resultado="Hora del pedido";
-        }else if(i==2){
-            resultado="Demora(Min.)";
-        }else if(i==3){
-            resultado="Gusto";
-        }else if(i==4){
-            resultado="Tipo";
-            
-        }else if(i==5){
-            resultado="Tamaño(Porc)";
-            
-        }else if(i==6){
-            resultado="Cantidad";
-        }else if(i==7){
-            resultado="Costo total";
-        }else{
-            resultado="Observaciones";
+        String resultado = "";
+        if (i == 0) {
+            resultado = "Cliente";
+        } else if (i == 1) {
+            resultado = "Hora del pedido";
+        } else if (i == 2) {
+            resultado = "Demora(Min.)";
+        } else if (i == 3) {
+            resultado = "Gusto";
+        } else if (i == 4) {
+            resultado = "Tipo";
+        } else if (i == 5) {
+            resultado = "Tamaño(Porc)";
+        } else if (i == 6) {
+            resultado = "Cantidad";
+        } else if (i == 7) {
+            resultado = "Costo total";
+        } else {
+            resultado = "Observaciones";
         }
-         return resultado;   //To change body of generated methods, choose Tools | Templates.
+        return resultado;   //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
