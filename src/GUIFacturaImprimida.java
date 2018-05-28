@@ -45,30 +45,39 @@ public class GUIFacturaImprimida extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         labelTitulo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        labelTitulo.setForeground(new java.awt.Color(102, 0, 102));
         labelTitulo.setText("Pizzeria: Factura");
 
         labelNombre.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        labelNombre.setText("Nombre:");
+        labelNombre.setForeground(new java.awt.Color(102, 0, 102));
+        labelNombre.setText("Nombre.............................................");
 
         labelCostoTotal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        labelCostoTotal.setText("Costo Total:");
+        labelCostoTotal.setForeground(new java.awt.Color(102, 0, 102));
+        labelCostoTotal.setText("Costo Total.......................................");
 
         labelHora.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        labelHora.setText("Hora:");
+        labelHora.setForeground(new java.awt.Color(102, 0, 102));
+        labelHora.setText("Hora.....................................................");
 
         labelHoraEntrega.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        labelHoraEntrega.setText("Hora de Entrega:");
+        labelHoraEntrega.setForeground(new java.awt.Color(102, 0, 102));
+        labelHoraEntrega.setText("Hora de Entrega................................");
 
         labelNombreRespuesta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelNombreRespuesta.setForeground(new java.awt.Color(102, 0, 102));
         labelNombreRespuesta.setText("label1");
 
         labelCostoTotalRespuesta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelCostoTotalRespuesta.setForeground(new java.awt.Color(102, 0, 102));
         labelCostoTotalRespuesta.setText("label2");
 
         labelHoraRespuesta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelHoraRespuesta.setForeground(new java.awt.Color(102, 0, 102));
         labelHoraRespuesta.setText("label3");
 
         labelHoraEntregaRespuesta.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelHoraEntregaRespuesta.setForeground(new java.awt.Color(102, 0, 102));
         labelHoraEntregaRespuesta.setText("label4");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -76,27 +85,36 @@ public class GUIFacturaImprimida extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(130, 130, 130)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelNombre, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelHoraEntrega, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelTitulo, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelCostoTotal, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelHora, javax.swing.GroupLayout.Alignment.LEADING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelNombreRespuesta, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelCostoTotalRespuesta, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelHoraRespuesta, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(labelHoraEntregaRespuesta, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(93, 93, 93))
+                    .addComponent(labelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(labelNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(labelCostoTotal, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(labelNombreRespuesta, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                                    .addComponent(labelCostoTotalRespuesta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(labelHoraEntrega, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(labelHoraEntregaRespuesta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(labelHora, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(labelHoraRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(20, 20, 20)))
+                .addGap(0, 110, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(19, 19, 19)
                 .addComponent(labelTitulo)
-                .addGap(60, 60, 60)
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNombre)
                     .addComponent(labelNombreRespuesta))
@@ -104,11 +122,11 @@ public class GUIFacturaImprimida extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCostoTotal)
                     .addComponent(labelCostoTotalRespuesta))
-                .addGap(29, 29, 29)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelHora)
                     .addComponent(labelHoraRespuesta))
-                .addGap(30, 30, 30)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelHoraEntrega)
                     .addComponent(labelHoraEntregaRespuesta))
