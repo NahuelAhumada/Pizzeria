@@ -24,7 +24,7 @@ public class PedidoTest {
         calTest.set(Calendar.HOUR_OF_DAY, 12);
         calTest.set(Calendar.MINUTE, 00);
         calTest.set(Calendar.SECOND, 0);
-        pedidoTest=new Pedido("Alfonso", "11:45:00", 1, new ItemPedido(pizzaPrueba, 2));
+        pedidoTest=new Pedido("Alfonso", "11:45:00", 1, new ItemPedido(pizzaPrueba, 2),null);
     }
     @Test
     public void deberiaDarQueElPedidoDe11y45EstaAtrasado() throws Exception {

@@ -21,12 +21,18 @@ public class Pedido {
     private String horaCreacion;
     private int tiempoDemoraMinutos;
     private ItemPedido pedido;
+    private String observaciones="";
 
-    public Pedido(String nombreCliente, String horaCreacion, int tiempoDemoraMinutos, ItemPedido pedido) {
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public Pedido(String nombreCliente, String horaCreacion, int tiempoDemoraMinutos, ItemPedido pedido, String observaciones) {
         this.nombreCliente = nombreCliente;
         this.horaCreacion = horaCreacion;
         this.tiempoDemoraMinutos = tiempoDemoraMinutos;
         this.pedido = pedido;
+        this.observaciones=observaciones;
     }
     public float getPrecio(){
         return pedido.calcularCosto();
