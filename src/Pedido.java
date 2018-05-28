@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,6 +18,35 @@ import java.util.Locale;
  * @author ITUOM
  */
 public class Pedido {
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.nombreCliente);
+        hash = 79 * hash + this.tiempoDemoraMinutos;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pedido other = (Pedido) obj;
+        if (this.tiempoDemoraMinutos != other.tiempoDemoraMinutos) {
+            return false;
+        }
+        if (!Objects.equals(this.nombreCliente, other.nombreCliente)) {
+            return false;
+        }
+        return true;
+    }
     private String nombreCliente;
     private String horaCreacion;
     private int tiempoDemoraMinutos;
