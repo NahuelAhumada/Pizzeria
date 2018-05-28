@@ -62,10 +62,10 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(boton)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,6 +133,9 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
     public void inicializarTabla() {
         modelo = new ModeloTablaDePedidos();
         tabla.setModel(modelo);
+
+        ResaltadorDePedidosVencidos resaltador = new ResaltadorDePedidosVencidos(modelo);
+        tabla.setDefaultRenderer(String.class, resaltador);
 
     }
 
