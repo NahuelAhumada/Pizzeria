@@ -15,6 +15,7 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
      */
     public GUITablaDePedidos() {
         initComponents();
+        inicializar();
     }
 
     /**
@@ -114,4 +115,8 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
+    public void inicializar(){
+        ModeloTablaDePedidos misPedidos= new ModeloTablaDePedidos();
+        tabla.setModel(misPedidos);
+    }
 }
