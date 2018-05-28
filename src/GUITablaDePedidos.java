@@ -1,3 +1,7 @@
+
+import java.util.Timer;
+import java.util.TimerTask;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,6 +22,7 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
     public GUITablaDePedidos() {
         initComponents();
         inicializarTabla();
+        comenzarTask();
     }
 
     /**
@@ -143,4 +148,14 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
         modelo.agregarPedido(pedido);
     }
 
+    public void comenzarTask(){
+        TimerTask nuevoTask=new TimerTask() {
+            @Override
+            public void run() {
+                tabla.repaint();
+            }
+        };
+        Timer time =new Timer();
+        time.schedule(nuevoTask, 3000, 10000);
+    }
 }
