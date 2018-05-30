@@ -11,19 +11,19 @@ import javax.swing.table.TableModel;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author ITUOM
  */
 public class ModeloTablaDePedidos implements TableModel {
-    private List<Pedido>listaPedidos=new ArrayList();
+
+    private List<Pedido> listaPedidos = new ArrayList();
     private List<TableModelListener> listeners = new ArrayList<TableModelListener>();
 
     public List<Pedido> getListaPedidos() {
         return listaPedidos;
     }
-            
+
     @Override
     public int getRowCount() {
         return listaPedidos.size();//To change body of generated methods, choose Tools | Templates.
@@ -87,29 +87,29 @@ public class ModeloTablaDePedidos implements TableModel {
             valor = String.valueOf(pedido.getPedido().getPizza().getTamanio()) + " Porc. ";
         } else if (columnIndex == 6) {
             valor = String.valueOf(pedido.getPedido().getCantidad());
-        } else if(columnIndex == 7){
-            valor ="$"+String.valueOf(pedido.getPrecio());
-        }else{
-            valor=pedido.getObservaciones();
+        } else if (columnIndex == 7) {
+            valor = "$" + String.valueOf(pedido.getPrecio());
+        } else {
+            valor = pedido.getObservaciones();
         }
         return valor;
     }
 
     @Override
     public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-        
+
     }
 
     @Override
-    public void addTableModelListener(TableModelListener tl){
+    public void addTableModelListener(TableModelListener tl) {
         listeners.add(tl);
     }
-    
+
     @Override
-    public void removeTableModelListener(TableModelListener tl){
+    public void removeTableModelListener(TableModelListener tl) {
         listeners.remove(tl);
     }
-    
+
     public void agregarPedido(Pedido pedido) {
         this.listaPedidos.add(pedido);
 
@@ -120,13 +120,28 @@ public class ModeloTablaDePedidos implements TableModel {
         for (TableModelListener listener : this.listeners) {
             listener.tableChanged(evento);
         }
+        
+        actualizarLista();
     }
-    
+
     public void borrarPedido(int posicion) {
         TableModelEvent evento = new TableModelEvent(this,
                 posicion, posicion,
                 TableModelEvent.ALL_COLUMNS, TableModelEvent.DELETE);
+
+        for (TableModelListener listener : this.listeners) {
+            listener.tableChanged(evento);
+        }
+    }
+
+    void actualizarLista() {
         
+        listaPedidos.sort(new CompararPorHora());
+        
+        TableModelEvent evento = new TableModelEvent(this,
+                0, listaPedidos.size() - 1,
+                TableModelEvent.ALL_COLUMNS, TableModelEvent.UPDATE);
+
         for (TableModelListener listener : this.listeners) {
             listener.tableChanged(evento);
         }

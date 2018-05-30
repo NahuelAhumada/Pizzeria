@@ -30,5 +30,16 @@ public class PedidoTest {
     public void deberiaDarQueElPedidoDe11y45EstaAtrasado() throws Exception {
         assertTrue(pedidoTest.pedidoAtrasado(calTest));
     }
+    @Test
+    public void deberiaDarQueElSegundoPedidoEsMayor(){
+        Pedido pedidoMayor=new Pedido("esteban", "11:58:00", 200, null, null);
+        assertEquals(-1, pedidoTest.compareTo(pedidoMayor));
+    }
+    
+    @Test
+    public void deberiaDarQueElSegundoPedidoEsMenor(){
+        Pedido pedidoMayor=new Pedido("esteban", "11:00:00", 1, null, null);
+        assertEquals(1, pedidoTest.compareTo(pedidoMayor));
+    }
     
 }

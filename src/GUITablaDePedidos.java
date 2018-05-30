@@ -189,7 +189,7 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
 
     }
 
-    public void inicializar(Pedido pedido) {
+    public void agregarPedidoEnModeloDeTabla(Pedido pedido) {
         modelo.agregarPedido(pedido);
     }
 
@@ -203,4 +203,5 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
         Timer time =new Timer();
         time.schedule(nuevoTask, 3000, 10000);
     }
+    
 }

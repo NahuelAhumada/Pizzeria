@@ -109,6 +109,7 @@ public class Pedido implements Comparable<Pedido>{
     @Override
     public int compareTo(Pedido t) {
         return this.horaRealDeEntrega.compareTo(t.horaRealDeEntrega);
+        
     }
     
 }
