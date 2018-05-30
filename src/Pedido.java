@@ -17,7 +17,7 @@ import java.util.Objects;
  *
  * @author ITUOM
  */
-public class Pedido implements Comparable<Object>{
+public class Pedido implements Comparable<Pedido>{
     
     private String nombreCliente;
     private String horaCreacion;
@@ -47,6 +47,10 @@ public class Pedido implements Comparable<Object>{
     
     public String getObservaciones() {
         return observaciones;
+    }
+
+    public Calendar getHoraRealDeEntrega() {
+        return horaRealDeEntrega;
     }
     
     @Override
@@ -103,8 +107,8 @@ public class Pedido implements Comparable<Object>{
     }
 
     @Override
-    public int compareTo(Object t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int compareTo(Pedido t) {
+        return this.horaRealDeEntrega.compareTo(t.horaRealDeEntrega);
     }
     
 }
