@@ -19,6 +19,36 @@ import java.util.Objects;
  */
 public class Pedido {
 
+    private String nombreCliente;
+    private String horaCreacion;
+    private int tiempoDemoraMinutos;
+    private ItemPedido pedido;
+    private String observaciones="";
+    private Calendar horaRealDeEntrega;
+
+
+    public Pedido(String nombreCliente, String horaCreacion, int tiempoDemoraMinutos, ItemPedido pedido, String observaciones) {
+        this.nombreCliente = nombreCliente;
+        this.horaCreacion = horaCreacion;
+        this.tiempoDemoraMinutos = tiempoDemoraMinutos;
+        this.pedido = pedido;
+        this.observaciones=observaciones;
+        Calendar horaPedido=Calendar.getInstance();
+        String[]valores=horaCreacion.split(":");
+        int hora=Integer.valueOf(valores[0]);
+        int minutos=Integer.valueOf(valores[1]);
+        int segundos=Integer.valueOf(valores[2]);
+        horaPedido.set(Calendar.HOUR_OF_DAY, hora);
+        horaPedido.set(Calendar.MINUTE,minutos);
+        horaPedido.set(Calendar.SECOND, segundos);
+        horaPedido.add(Calendar.MINUTE, tiempoDemoraMinutos);
+        this.horaRealDeEntrega=horaPedido;
+    }
+    
+    public String getObservaciones() {
+        return observaciones;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -47,23 +77,7 @@ public class Pedido {
         }
         return true;
     }
-    private String nombreCliente;
-    private String horaCreacion;
-    private int tiempoDemoraMinutos;
-    private ItemPedido pedido;
-    private String observaciones="";
-
-    public String getObservaciones() {
-        return observaciones;
-    }
-
-    public Pedido(String nombreCliente, String horaCreacion, int tiempoDemoraMinutos, ItemPedido pedido, String observaciones) {
-        this.nombreCliente = nombreCliente;
-        this.horaCreacion = horaCreacion;
-        this.tiempoDemoraMinutos = tiempoDemoraMinutos;
-        this.pedido = pedido;
-        this.observaciones=observaciones;
-    }
+    
     public float getPrecio(){
         return pedido.calcularCosto();
     }
@@ -84,16 +98,8 @@ public class Pedido {
         return pedido;
     }
     public boolean pedidoAtrasado(Calendar horaActual) {
-        Calendar horaPedido=Calendar.getInstance();
-        String[]valores=horaCreacion.split(":");
-        int hora=Integer.valueOf(valores[0]);
-        int minutos=Integer.valueOf(valores[1]);
-        int segundos=Integer.valueOf(valores[2]);
-        horaPedido.set(Calendar.HOUR_OF_DAY, hora);
-        horaPedido.set(Calendar.MINUTE,minutos);
-        horaPedido.set(Calendar.SECOND, segundos);
-        horaPedido.add(Calendar.MINUTE, tiempoDemoraMinutos);
-        return horaActual.after(horaPedido);
+        
+        return horaActual.after(this.horaRealDeEntrega);
     }
     
 }
