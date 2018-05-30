@@ -83,7 +83,7 @@ public class Pedido {
     public ItemPedido getPedido() {
         return pedido;
     }
-    public boolean pedidoAtrasado(Calendar horaActual)throws Exception{
+    public boolean pedidoAtrasado(Calendar horaActual) {
         Calendar horaPedido=Calendar.getInstance();
         String[]valores=horaCreacion.split(":");
         int hora=Integer.valueOf(valores[0]);

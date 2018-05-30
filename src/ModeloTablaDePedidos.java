@@ -121,5 +121,15 @@ public class ModeloTablaDePedidos implements TableModel {
             listener.tableChanged(evento);
         }
     }
+    
+    public void borrarPedido(int posicion) {
+        TableModelEvent evento = new TableModelEvent(this,
+                posicion, posicion,
+                TableModelEvent.ALL_COLUMNS, TableModelEvent.DELETE);
+        
+        for (TableModelListener listener : this.listeners) {
+            listener.tableChanged(evento);
+        }
+    }
 
 }

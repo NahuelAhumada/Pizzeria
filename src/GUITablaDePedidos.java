@@ -1,5 +1,7 @@
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
@@ -115,15 +117,25 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
     }//GEN-LAST:event_agregarPedido
 
     private void botonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLimpiarActionPerformed
+        
+        
+        List<Pedido> pedidosABorrar = new ArrayList<Pedido>();
+        List<Integer> posicionesDePedidosABorrar = new ArrayList<Integer>();
+        
         for(Pedido pedido: modelo.getListaPedidos()){
-            try {
-                if(pedido.pedidoAtrasado(Calendar.getInstance())){
-                    modelo.getListaPedidos().remove(pedido);
-                            }
-            } catch (Exception ex) {
-                Logger.getLogger(GUITablaDePedidos.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if(pedido.pedidoAtrasado(Calendar.getInstance())){
+                pedidosABorrar.add(pedido);
+                posicionesDePedidosABorrar.add( modelo.getListaPedidos().indexOf(pedido) );
             }
-        }       
+        }
+        
+        modelo.getListaPedidos().removeAll(pedidosABorrar);
+        
+        for(Integer posicion : posicionesDePedidosABorrar) {
+            modelo.borrarPedido(posicion);
+        }
+        
     }//GEN-LAST:event_botonLimpiarActionPerformed
 
     /**
