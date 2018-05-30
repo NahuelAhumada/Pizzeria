@@ -20,14 +20,15 @@ import sun.util.calendar.Gregorian;
 public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     
     private Pedido pedido;
-    private GUITablaDePedidos tablaPedidos;
-    
+    private GUITablaDePedidos pantallaPedidosEnviados;
+    private ModeloTablasPizzasAPedir modeloTabla;
 
     /**
      * Creates new form NuevoPedido
      */
     public GUIPizzeriaCantidades() {
         initComponents();
+        iniciarTabla();
         hourConfig();
     }
 
@@ -130,6 +131,11 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tablaPizzas);
 
         botonAgregarPizza.setText("Agregar Pizza");
+        botonAgregarPizza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAgregarPizzaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -330,7 +336,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             pedido = new Pedido(nombreIngresado, hora, demoraReal, cantidaPedida,textFieldAgregar.getText());
             
             try{
-                tablaPedidos.agregarPedidoEnModeloDeTabla(pedido);
+                pantallaPedidosEnviados.agregarPedidoEnModeloDeTabla(pedido);
 //                listaPedidos.ordenar();
                 this.setVisible(false);
             }catch(Exception e){
@@ -345,6 +351,10 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_clickBotonCalcularPedido
+
+    private void botonAgregarPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarPizzaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonAgregarPizzaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -406,7 +416,10 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     private javax.swing.JTextField textFieldHora;
     private javax.swing.JTextField textFieldNombre;
     // End of variables declaration//GEN-END:variables
-    
+    public void iniciarTabla(){
+        modeloTabla=new ModeloTablasPizzasAPedir();
+        tablaPizzas.setModel(modeloTabla);
+    }
     private void hourConfig() {
         Date date = new Date();
         Calendar calendar = GregorianCalendar.getInstance();
@@ -432,8 +445,8 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     public Pedido getPedido(){
         return pedido;
     }
-    public void setGui(GUITablaDePedidos listaPedidos){
-        this.tablaPedidos=listaPedidos;
+    public void setGui(GUITablaDePedidos pantallaPedidos){
+        this.pantallaPedidosEnviados=pantallaPedidos;
     }
 
 }

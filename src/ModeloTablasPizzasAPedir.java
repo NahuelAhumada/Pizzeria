@@ -18,6 +18,11 @@ import javax.swing.table.TableModel;
 public class ModeloTablasPizzasAPedir implements TableModel {
     private List<ItemPedido> pizzas= new ArrayList<>();
     private List<TableModelListener>listener=new ArrayList<>();
+
+    public List<ItemPedido> getPizzas() {
+        return pizzas;
+    }
+    
     @Override
     public int getRowCount() {
         return pizzas.size();
@@ -30,7 +35,7 @@ public class ModeloTablasPizzasAPedir implements TableModel {
 
     @Override
     public String getColumnName(int i) {
-        String resultado="";
+        String resultado="d";
         if(i==0){
             resultado="Variedad";
         }else if(i==1){
@@ -58,7 +63,7 @@ public class ModeloTablasPizzasAPedir implements TableModel {
     @Override
     public Object getValueAt(int i, int j) {
          ItemPedido pizza=pizzas.get(i);
-         String valor="";
+         String valor="d";
          if(j==0){
              valor=pizza.getPizza().getVariedad().getNombrePizza();
          }else if(j==1){
