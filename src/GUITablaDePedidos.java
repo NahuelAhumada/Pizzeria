@@ -110,32 +110,28 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void agregarPedido(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarPedido
-
         GUIPizzeriaCantidades nuevaPizza = new GUIPizzeriaCantidades();
         nuevaPizza.setVisible(true);
         nuevaPizza.setGui(this);
     }//GEN-LAST:event_agregarPedido
 
     private void botonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLimpiarActionPerformed
-        
-        
         List<Pedido> pedidosABorrar = new ArrayList<Pedido>();
         List<Integer> posicionesDePedidosABorrar = new ArrayList<Integer>();
         
-        for(Pedido pedido: modelo.getListaPedidos()){
-            
-            if(pedido.pedidoAtrasado(Calendar.getInstance())){
+        for (Pedido pedido : modelo.getListaPedidos()) {
+
+            if (pedido.pedidoAtrasado(Calendar.getInstance())) {
                 pedidosABorrar.add(pedido);
-                posicionesDePedidosABorrar.add( modelo.getListaPedidos().indexOf(pedido) );
+                posicionesDePedidosABorrar.add(modelo.getListaPedidos().indexOf(pedido));
             }
         }
-        
+
         modelo.getListaPedidos().removeAll(pedidosABorrar);
-        
-        for(Integer posicion : posicionesDePedidosABorrar) {
+
+        for (Integer posicion : posicionesDePedidosABorrar) {
             modelo.borrarPedido(posicion);
-        }
-        
+        }   
     }//GEN-LAST:event_botonLimpiarActionPerformed
 
     /**

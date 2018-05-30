@@ -25,14 +25,15 @@ public class Variedad {
     }
 
     public Variedad(String nombre) {
+        
         this.nombrePizza = nombre;
-
         this.ingredientes = new ArrayList<>();
+        
         if (nombre.equals("Muzzarella")) {
             this.precio = 50.00f;
             ingredientes.add("Tomate");
             ingredientes.add("Queso Muzzarella");
-            
+
         }
         if (nombre.equals("Jamon y Morrones")) {
             this.precio = 60.00f;
@@ -50,20 +51,21 @@ public class Variedad {
         if (nombre.equals("Cuatro Quesos")) {
             this.precio = 70.00f;
             ingredientes.add("Muzzarella");
-            ingredientes.add("Probolone");
+            ingredientes.add("Provolone");
             ingredientes.add("Roquefort");
-            ingredientes.add("Chedar");
+            ingredientes.add("Cheddar");
 
         }
         if(nombre.equals("Napolitana")){
             this.precio=70.00f;
-            ingredientes.add("Muzarrella");
+            ingredientes.add("Muzzarella");
             ingredientes.add("Jamon");
             ingredientes.add("Tomate");
             ingredientes.add("Salame");
-            ingredientes.add("Queso Rayado");
+            ingredientes.add("Queso Rallado");
             
         }
+        
     }
 
     @Override
@@ -95,5 +97,5 @@ public class Variedad {
     public String getNombrePizza() {
         return nombrePizza;
     }
-
+    
 }
