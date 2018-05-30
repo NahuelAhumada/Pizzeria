@@ -1,3 +1,6 @@
+
+import java.util.Objects;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -35,4 +38,33 @@ public class ItemPedido {
         return cantidad;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 89 * hash + Objects.hashCode(this.pizza);
+        hash = 89 * hash + this.cantidad;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final ItemPedido other = (ItemPedido) obj;
+        if (this.cantidad != other.cantidad) {
+            return false;
+        }
+        if (!Objects.equals(this.pizza, other.pizza)) {
+            return false;
+        }
+        return true;
+    }
+    
 }

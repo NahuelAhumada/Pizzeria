@@ -1,3 +1,6 @@
+
+import java.util.Objects;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +18,7 @@ public class Pizza {
     private int tamanio;
     private Tipo tipo;
     private Variedad variedad;
+    
 
     public Pizza(int tamanio, Tipo tipo, Variedad variedad) {
         if (tamanio != 8 && tamanio != 10 && tamanio != 12) {
@@ -60,5 +64,38 @@ public class Pizza {
 
     public Variedad getVariedad() {
         return variedad;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + this.tamanio;
+        hash = 59 * hash + Objects.hashCode(this.tipo);
+        hash = 59 * hash + Objects.hashCode(this.variedad);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pizza other = (Pizza) obj;
+        if (this.tamanio != other.tamanio) {
+            return false;
+        }
+        if (this.tipo != other.tipo) {
+            return false;
+        }
+        if (!Objects.equals(this.variedad, other.variedad)) {
+            return false;
+        }
+        return true;
     }
 }
