@@ -3,6 +3,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -25,6 +26,7 @@ public class Pedido implements Comparable<Pedido>{
     private ItemPedido pedido;
     private String observaciones="";
     private Calendar horaRealDeEntrega;
+    private List<ItemPedido> pizzasAPedir;
 
 
     public Pedido(String nombreCliente, String horaCreacion, int tiempoDemoraMinutos, ItemPedido pedido, String observaciones) {
