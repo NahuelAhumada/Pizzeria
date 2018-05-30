@@ -21,18 +21,21 @@ import sun.swing.table.DefaultTableCellHeaderRenderer;
  */
 public class ResaltadorDePedidosVencidos implements TableCellRenderer{
     private final ModeloTablaDePedidos modelo;
-    public ResaltadorDePedidosVencidos(ModeloTablaDePedidos modelo){
-        this.modelo=modelo;
+
+    public ResaltadorDePedidosVencidos(ModeloTablaDePedidos modelo) {
+        this.modelo = modelo;
     }
+    
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-        Component c=new DefaultTableCellHeaderRenderer()
-                .getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column); 
-        Pedido pedido=modelo.getListaPedidos().get(row);
+        
+        Component c = new DefaultTableCellHeaderRenderer()
+                .getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+        Pedido pedido = modelo.getListaPedidos().get(row);
         try {
-            if (pedido.pedidoAtrasado(Calendar.getInstance())){
+            if (pedido.pedidoAtrasado(Calendar.getInstance())) {
                 c.setBackground(Color.red);
-            }else{
+            } else {
                 c.setBackground(Color.white);
             }
         } catch (Exception ex) {
@@ -40,5 +43,5 @@ public class ResaltadorDePedidosVencidos implements TableCellRenderer{
         }
         return c;
     }
-    
+
 }
