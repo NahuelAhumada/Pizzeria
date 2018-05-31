@@ -16,6 +16,7 @@ public class ItemPedido {
     
     private Pizza pizza;
     private int cantidad;
+    private String observaciones;
     
 
     public ItemPedido(Pizza pizza, int cantidad) {

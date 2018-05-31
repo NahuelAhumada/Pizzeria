@@ -303,11 +303,12 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             }else{
                 labelErrorHora.setText(null);
             }
+            else {
+                labelErrorNombre.setText(null);
+                labelErrorCantidad.setText(null);
+                labelErrorDemora.setText(null);
                 
-        }else {
-            labelErrorNombre.setText(null);
-            labelErrorCantidad.setText(null);
-            labelErrorDemora.setText(null);
+        }
             
         
         try {
@@ -332,7 +333,9 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             Pizza pizzaPedida = new Pizza(tamanioSeleccionado, tipoSeleccionado, variedadDeLaPizza);
             ItemPedido cantidaPedida = new ItemPedido(pizzaPedida, cantidadReal);
             pedido = new Pedido(nombreIngresado, hora, demoraReal, cantidaPedida,textFieldAgregar.getText());
-            
+            labelErrorNombre.setText(null);
+            labelErrorCantidad.setText(null);
+            labelErrorDemora.setText(null);
             try{
                 pantallaPedidosEnviados.agregarPedidoEnModeloDeTabla(pedido);
 //                listaPedidos.ordenar();
@@ -346,8 +349,8 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                 labelErrorDemora.setText("Dato Invalido");
             }
 
+        
         }
-
     }//GEN-LAST:event_clickBotonCalcularPedido
 
     private void botonAgregarPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarPizzaActionPerformed
@@ -371,12 +374,16 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                 labelErrorCantidad.setText("Cantidad Vacia");
             }else{
                 labelErrorCantidad.setText(null);
-            try{
-                cantidadReal=Integer.valueOf(cantidad);
-                ItemPedido itemFinal=new ItemPedido(pizzaIngresada, cantidadReal);
-                modeloTabla.agregarPizza(itemFinal);
-            }catch(Exception e){
-                
+                try{
+                    cantidadReal=Integer.valueOf(cantidad);
+                    if(cantidadReal<=0){
+                        labelErrorCantidad.setText("");
+                    }else{
+                        ItemPedido itemFinal=new ItemPedido(pizzaIngresada, cantidadReal);
+                        modeloTabla.agregarPizza(itemFinal);
+                    }
+                    }catch(Exception e){
+                        labelErrorCantidad.setText("Inserte un numero entero");
                 
             }
         }
