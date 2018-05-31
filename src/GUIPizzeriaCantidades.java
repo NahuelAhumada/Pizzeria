@@ -303,10 +303,6 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             }else{
                 labelErrorHora.setText(null);
             }
-            else {
-                labelErrorNombre.setText(null);
-                labelErrorCantidad.setText(null);
-                labelErrorDemora.setText(null);
                 
         }
             
@@ -350,7 +346,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             }
 
         
-        }
+
     }//GEN-LAST:event_clickBotonCalcularPedido
 
     private void botonAgregarPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarPizzaActionPerformed
@@ -377,13 +373,13 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                 try{
                     cantidadReal=Integer.valueOf(cantidad);
                     if(cantidadReal<=0){
-                        labelErrorCantidad.setText("");
+                        labelErrorCantidad.setText(tipo);
                     }else{
                         ItemPedido itemFinal=new ItemPedido(pizzaIngresada, cantidadReal);
                         modeloTabla.agregarPizza(itemFinal);
                     }
                     }catch(Exception e){
-                        labelErrorCantidad.setText("Inserte un numero entero");
+                        labelErrorCantidad.setText("Inserte un numero ");
                 
             }
         }
