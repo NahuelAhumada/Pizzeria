@@ -262,7 +262,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     private void clickBotonCalcularPedido(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clickBotonCalcularPedido
         
         String nombreIngresado;String hora;String demoraIngresada;
-        String cantidad=textFieldCantidad.getText().trim();
+        
         nombreIngresado = (String) textFieldNombre.getText().trim();
         hora = textFieldHora.getText().trim();
         demoraIngresada = textFieldDemora.getText().trim();
@@ -281,7 +281,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             }
         }
             
-        if(nombreIngresado.isEmpty()||demoraIngresada.isEmpty()||cantidad.isEmpty()||!horaValida){
+        if(nombreIngresado.isEmpty()||demoraIngresada.isEmpty()||!horaValida){
             if(demoraIngresada.isEmpty()){
             labelErrorDemora.setText("Texto vacio");
             }else{
@@ -292,12 +292,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             }else{
                 labelErrorNombre.setText(null);
             }
-                
-            if(cantidad.isEmpty()){
-                labelErrorCantidad.setText("Cantidad vacia");
-            }else{
-                labelErrorCantidad.setText(null);
-            }
+
             if(!horaValida){
                 labelErrorHora.setText("Hora invalida");
             }else{
@@ -309,38 +304,11 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         
         try {
             Integer demoraReal=Integer.valueOf(demoraIngresada);
-            Integer cantidadReal=Integer.valueOf(cantidad);
-            if(cantidadReal<1){
-            labelErrorDemora.setText("Cantidad invalida");
-            }else{
-            String selectedItem = (String) comboBoxVariedad.getSelectedItem();
-             Variedad variedadDeLaPizza = new Variedad(selectedItem);
-            Tipo tipoSeleccionado;
-            Integer tamanioSeleccionado = Integer.valueOf( (String) comboBoxTamanio.getSelectedItem());
-        
-            String tipo = (String) comboBoxTipo.getSelectedItem();
-            if (tipo.equals("A la piedra")) {
-            tipoSeleccionado = Tipo.PIEDRA;
-            } else if (tipo.equals("A la parrilla")) {
-            tipoSeleccionado = Tipo.PARRILA;
-            } else {
-            tipoSeleccionado = Tipo.MOLDE;
-            }
-            Pizza pizzaPedida = new Pizza(tamanioSeleccionado, tipoSeleccionado, variedadDeLaPizza);
-            ItemPedido cantidaPedida = new ItemPedido(pizzaPedida, cantidadReal);
-            pedido = new Pedido(nombreIngresado, hora, demoraReal, cantidaPedida,textFieldAgregar.getText());
-            labelErrorNombre.setText(null);
-            labelErrorCantidad.setText(null);
-            labelErrorDemora.setText(null);
-            try{
-                pantallaPedidosEnviados.agregarPedidoEnModeloDeTabla(pedido);
-//                listaPedidos.ordenar();
-                this.setVisible(false);
-            }catch(Exception e){
-                
-            }
             
-                }
+            
+            
+            
+                
             } catch (NumberFormatException e) {
                 labelErrorDemora.setText("Dato Invalido");
             }
