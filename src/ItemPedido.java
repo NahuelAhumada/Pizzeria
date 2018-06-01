@@ -1,4 +1,5 @@
 
+import java.util.List;
 import java.util.Objects;
 
 /*
@@ -13,7 +14,6 @@ import java.util.Objects;
  * @author ITUOM
  */
 public class ItemPedido {
-    
     private Pizza pizza;
     private int cantidad;
    

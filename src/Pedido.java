@@ -29,11 +29,12 @@ public class Pedido implements Comparable<Pedido>{
     private List<ItemPedido> pizzasAPedir;
 
 
-    public Pedido(String nombreCliente, String horaCreacion, int tiempoDemoraMinutos, ItemPedido pedido, String observaciones) {
+    public Pedido(String nombreCliente, String horaCreacion, int tiempoDemoraMinutos,
+            List<ItemPedido> pizzasPedidas, String observaciones) {
         this.nombreCliente = nombreCliente;
         this.horaCreacion = horaCreacion;
         this.tiempoDemoraMinutos = tiempoDemoraMinutos;
-        this.pedido = pedido;
+        this.pizzasAPedir=pizzasPedidas;
         this.observaciones=observaciones;
         Calendar horaPedido=Calendar.getInstance();
         String[]valores=horaCreacion.split(":");

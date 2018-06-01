@@ -30,7 +30,7 @@ public class ModeloTablasPizzasAPedir implements TableModel {
 
     @Override
     public int getColumnCount() {
-        return 5;
+        return 4;
     }
 
     @Override
@@ -42,10 +42,8 @@ public class ModeloTablasPizzasAPedir implements TableModel {
             resultado="Tipo";
         }else if(i==2){
             resultado="Porciones";
-        }else if(i==3){
+        }else {
             resultado="Cantidad";
-        }else{
-            resultado="Observaciones";
         }
         return resultado;
     }
@@ -70,10 +68,8 @@ public class ModeloTablasPizzasAPedir implements TableModel {
              valor= String.valueOf(pizza.getPizza().getTipo());
          }else if(j==2){
              valor=String.valueOf(pizza.getPizza().getTamanio());
-         }else if(j==3){
+         }else {
              valor=String.valueOf(pizza.getCantidad());
-         }else{
-             valor="observaciones";
          }
          return valor;
     }
