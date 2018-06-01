@@ -291,7 +291,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         boolean datosDeClienteInvalidos=nombreIngresado.isEmpty()||demoraIngresada.isEmpty()||!horaValida;
         if(datosDeClienteInvalidos){
             if(demoraIngresada.isEmpty()){
-            labelErrorDemora.setText("Texto vacio");
+            labelErrorDemora.setText("Demora vacia");
             }else{
                 labelErrorDemora.setText(null);
             }if(nombreIngresado.isEmpty()){
@@ -316,10 +316,10 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                 pedido=new Pedido(nombreIngresado, hora, demoraReal, pizzas, null);
             }
         } catch (NumberFormatException e) {
-            if(labelErrorDemora.getText()!=null){
+            if(!demoraIngresada.isEmpty()){
                 labelErrorDemora.setText("Dato Invalido");
-                
             }
+            
         
         }
     }//GEN-LAST:event_clickBotonCalcularPedido
@@ -348,7 +348,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                 try{
                     cantidadReal=Integer.valueOf(cantidad);
                     if(cantidadReal<=0){
-                        labelErrorCantidad.setText(tipo);
+                        labelErrorCantidad.setText("Cantidad invalida");
                     }else{
                         ItemPedido itemFinal=new ItemPedido(pizzaIngresada, cantidadReal);
                         modeloTabla.agregarPizza(itemFinal);
