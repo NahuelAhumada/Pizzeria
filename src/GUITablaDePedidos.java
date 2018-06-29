@@ -6,6 +6,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -177,6 +179,10 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void inicializarTabla() {
+        
+        AdministradorDeVariedades admin=new AdministradorDeVariedades();
+        admin.obtenerVariedades();
+        
         modelo = new ModeloTablaDePedidos();
         tabla.setModel(modelo);
 

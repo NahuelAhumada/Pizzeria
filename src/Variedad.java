@@ -8,20 +8,39 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 
 /**
  *
  * @author ITUOM
  */
+@Entity
 public class Variedad {
+    @Column
     private String nombrePizza;
+    @Column
     private float precio=0;
+    
+    @Transient
     private List<String> ingredientes;
-
+    
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
+    
     public Variedad(String nombre, float precio, List<String> ingredientes) {
         this.nombrePizza = nombre;
         this.precio = precio;
         this.ingredientes = ingredientes;
+    }
+    
+    public Variedad(){
+        
     }
 
     public Variedad(String nombre) {
@@ -96,6 +115,14 @@ public class Variedad {
 
     public String getNombrePizza() {
         return nombrePizza;
+    }
+
+    public void setNombrePizza(String nombrePizza) {
+        this.nombrePizza = nombrePizza;
+    }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
     }
     
 }

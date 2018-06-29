@@ -23,6 +23,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     private Pedido pedido;
     private GUITablaDePedidos pantallaPedidosEnviados;
     private ModeloTablasPizzasAPedir modeloTabla;
+    private List<Variedad>variedades;
 
     /**
      * Creates new form NuevoPedido
@@ -97,7 +98,11 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         comboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A la piedra", "A la parrilla", "Al molde" }));
 
         comboBoxVariedad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        comboBoxVariedad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Muzzarella", "Jamon y Morrones", "Fugazzeta", "Cuatro Quesos", "Napolitana" }));
+        comboBoxVariedad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboBoxVariedadActionPerformed(evt);
+            }
+        });
 
         labelPizzas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelPizzas.setText("¿Cuantas Pizzas? :");
@@ -222,8 +227,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(botonCalcularPedido)
                             .addComponent(labelErrorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonAgregarPizza, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addComponent(botonAgregarPizza, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -328,7 +332,13 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     private void botonAgregarPizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAgregarPizzaActionPerformed
         Pizza pizzaIngresada;
         Integer tamanioSeleccionado=Integer.valueOf((String)comboBoxTamanio.getSelectedItem());
+        
         String nombreVariedad = (String) comboBoxVariedad.getSelectedItem();
+        int indiceVariedadSeleccioada = comboBoxVariedad.getSelectedIndex();
+        
+        
+        
+        
         Tipo tipoSeleccionado;
         String tipo = (String) comboBoxTipo.getSelectedItem();
             if (tipo.equals("A la piedra")) {
@@ -338,7 +348,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             } else {
             tipoSeleccionado = Tipo.MOLDE;
             }
-            Variedad variedad=new Variedad(nombreVariedad);
+            Variedad variedad=this.variedades.get(indiceVariedadSeleccioada);
             pizzaIngresada=new Pizza(tamanioSeleccionado, tipoSeleccionado, variedad);
             String cantidad=textFieldCantidad.getText().trim();
             Integer cantidadReal;
@@ -360,6 +370,10 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_botonAgregarPizzaActionPerformed
+
+    private void comboBoxVariedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxVariedadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboBoxVariedadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -425,6 +439,13 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     public void iniciarTabla() {
         modeloTabla=new ModeloTablasPizzasAPedir();
         tablaPizzas.setModel(modeloTabla);
+        AdministradorDeVariedades admin=new AdministradorDeVariedades();
+        variedades=admin.obtenerVariedades();
+        for(Variedad v:variedades){
+            
+            comboBoxVariedad.addItem(v.getNombrePizza());
+        }
+            
     }
     
     private void hourConfig() {
