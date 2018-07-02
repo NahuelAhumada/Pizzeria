@@ -65,6 +65,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         tablaPizzas = new javax.swing.JTable();
         botonAgregarPizza = new javax.swing.JButton();
         labelErrorListaVacia = new javax.swing.JLabel();
+        botonAdministrarVariedad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -148,6 +149,13 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         labelErrorListaVacia.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         labelErrorListaVacia.setForeground(new java.awt.Color(255, 0, 0));
 
+        botonAdministrarVariedad.setText("Administrar variedad");
+        botonAdministrarVariedad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAdministrarVariedadActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -206,10 +214,15 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                                 .addComponent(botonAgregarPizza, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(146, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(185, 185, 185)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62)
-                .addComponent(labelErrorListaVacia, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(185, 185, 185)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)
+                        .addComponent(labelErrorListaVacia, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(botonAdministrarVariedad)))
                 .addGap(0, 78, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -229,6 +242,10 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                             .addComponent(labelErrorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(botonAgregarPizza, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(labelErrorListaVacia, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(265, 265, 265))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -261,11 +278,9 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                             .addComponent(labelErrorCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(58, 58, 58)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(222, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(labelErrorListaVacia, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(265, 265, 265))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                        .addComponent(botonAdministrarVariedad)
+                        .addGap(33, 33, 33))))
         );
 
         pack();
@@ -375,6 +390,12 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboBoxVariedadActionPerformed
 
+    private void botonAdministrarVariedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAdministrarVariedadActionPerformed
+        GUIAdministrarVariedad adV=new GUIAdministrarVariedad();
+        adV.setVisible(true);
+        adV.setPizzeria(this);
+    }//GEN-LAST:event_botonAdministrarVariedadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -413,6 +434,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonAdministrarVariedad;
     private javax.swing.JButton botonAgregarPizza;
     private javax.swing.JButton botonCalcularPedido;
     private javax.swing.JComboBox<String> comboBoxTamanio;
@@ -477,5 +499,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     public void setGui(GUITablaDePedidos pantallaPedidos) {
         this.pantallaPedidosEnviados = pantallaPedidos;
     }
-
+    public List<Variedad>getVariedades(){
+        return this.variedades;
+    }
 }
