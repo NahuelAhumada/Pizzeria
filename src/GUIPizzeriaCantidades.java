@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.TimerTask;
+import javax.swing.JComboBox;
 import sun.util.calendar.Gregorian;
 
 
@@ -501,5 +502,9 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     }
     public List<Variedad>getVariedades(){
         return this.variedades;
+    }
+
+    public JComboBox<String> getComboBoxVariedad() {
+        return comboBoxVariedad;
     }
 }

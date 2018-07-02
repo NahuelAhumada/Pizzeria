@@ -38,6 +38,9 @@ public class GUIAdministrarVariedad extends javax.swing.JFrame {
         botonFinalizar = new javax.swing.JButton();
         labelErrorNuevoPrecio = new javax.swing.JLabel();
         botonEliminarVariedad = new javax.swing.JButton();
+        labelNuevaVariedad = new javax.swing.JLabel();
+        textoNuevaVariedad = new javax.swing.JTextField();
+        botonGenerarNuevaVariedad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,7 +59,7 @@ public class GUIAdministrarVariedad extends javax.swing.JFrame {
         jLabel1.setText("Nuevo Precio:");
 
         botonFinalizar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        botonFinalizar.setText("Listo");
+        botonFinalizar.setText("Cambiar precio");
         botonFinalizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonFinalizarActionPerformed(evt);
@@ -73,6 +76,19 @@ public class GUIAdministrarVariedad extends javax.swing.JFrame {
             }
         });
 
+        labelNuevaVariedad.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        labelNuevaVariedad.setText("Nueva Variedad");
+
+        textoNuevaVariedad.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        botonGenerarNuevaVariedad.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        botonGenerarNuevaVariedad.setText("Crear Variedad");
+        botonGenerarNuevaVariedad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonGenerarNuevaVariedadActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -81,23 +97,28 @@ public class GUIAdministrarVariedad extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelSelectVariedad)
-                    .addComponent(jLabel1))
-                .addGap(115, 115, 115)
+                    .addComponent(jLabel1)
+                    .addComponent(labelNuevaVariedad))
+                .addGap(103, 103, 103)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(leerNuevoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboBoxDeVariedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelErrorNuevoPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(botonEliminarVariedad)
-                        .addGap(0, 61, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(leerNuevoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(comboBoxDeVariedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelErrorNuevoPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(botonEliminarVariedad)
+                                .addGap(0, 61, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonGenerarNuevaVariedad)
+                            .addComponent(botonFinalizar)
+                            .addComponent(textoNuevaVariedad, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(160, 160, 160)
-                .addComponent(botonFinalizar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,9 +133,15 @@ public class GUIAdministrarVariedad extends javax.swing.JFrame {
                     .addComponent(leerNuevoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(labelErrorNuevoPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(75, 75, 75)
+                .addGap(18, 18, 18)
                 .addComponent(botonFinalizar)
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelNuevaVariedad)
+                    .addComponent(textoNuevaVariedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(botonGenerarNuevaVariedad)
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -141,12 +168,51 @@ public class GUIAdministrarVariedad extends javax.swing.JFrame {
     }//GEN-LAST:event_botonFinalizarActionPerformed
 
     private void comboBoxDeVariedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxDeVariedadActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_comboBoxDeVariedadActionPerformed
 
     private void botonEliminarVariedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEliminarVariedadActionPerformed
-        // TODO add your handling code here:
+        AdministradorDeVariedades admin=new AdministradorDeVariedades();
+        int indice=comboBoxDeVariedad.getSelectedIndex();
+        Session session= NewHibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        Variedad variedad=admin.obtenerVariedades().remove(indice);
+        session.delete(variedad);
+        session.getTransaction().commit();
+        session.close();
+        try{
+            pizzeria.getComboBoxVariedad().removeItemAt(indice);
+            
+            
+        
+        } catch(Exception e){
+            
+        }   
+        this.setVisible(false);
     }//GEN-LAST:event_botonEliminarVariedadActionPerformed
+
+    private void botonGenerarNuevaVariedadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGenerarNuevaVariedadActionPerformed
+        AdministradorDeVariedades admin=new AdministradorDeVariedades();
+        int indice=comboBoxDeVariedad.getSelectedIndex();
+        Session session= NewHibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        Float precio=Float.valueOf(leerNuevoPrecio.getText());
+        String nombre=String.valueOf(textoNuevaVariedad.getText());
+        Variedad nuevaVariedad=new Variedad(nombre, precio, null);
+        admin.obtenerVariedades().add(nuevaVariedad);
+        session.merge(nuevaVariedad);
+        session.getTransaction().commit();
+        session.close();
+        try{
+            pizzeria.getComboBoxVariedad().addItem(nombre);
+            
+            
+        
+        } catch(Exception e){
+            
+        }  
+        this.setVisible(false);
+    }//GEN-LAST:event_botonGenerarNuevaVariedadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,11 +252,14 @@ public class GUIAdministrarVariedad extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonEliminarVariedad;
     private javax.swing.JButton botonFinalizar;
+    private javax.swing.JButton botonGenerarNuevaVariedad;
     private javax.swing.JComboBox<String> comboBoxDeVariedad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel labelErrorNuevoPrecio;
+    private javax.swing.JLabel labelNuevaVariedad;
     private javax.swing.JLabel labelSelectVariedad;
     private javax.swing.JTextField leerNuevoPrecio;
+    private javax.swing.JTextField textoNuevaVariedad;
     // End of variables declaration//GEN-END:variables
 
     private void iniciar() {
