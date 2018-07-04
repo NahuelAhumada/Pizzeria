@@ -31,7 +31,7 @@ public class ModeloTablaDePedidos implements TableModel {
 
     @Override
     public int getColumnCount() {
-        return 9;
+        return 5;
     }
 
     @Override
@@ -43,15 +43,7 @@ public class ModeloTablaDePedidos implements TableModel {
             resultado = "Hora del pedido";
         } else if (columnIndex == 2) {
             resultado = "Demora(Min.)";
-        } else if (columnIndex == 3) {
-            resultado = "Gusto";
-        } else if (columnIndex == 4) {
-            resultado = "Tipo";
-        } else if (columnIndex == 5) {
-            resultado = "Tamaño(Porc)";
-        } else if (columnIndex == 6) {
-            resultado = "Cantidad";
-        } else if (columnIndex == 7) {
+        }  else if (columnIndex == 3) {
             resultado = "Costo total";
         } else {
             resultado = "Observaciones";
@@ -80,16 +72,8 @@ public class ModeloTablaDePedidos implements TableModel {
         } else if (columnIndex == 2) {
             valor = String.valueOf(pedido.getTiempoDemoraMinutos());
         } else if (columnIndex == 3) {
-            valor = String.valueOf(pedido.getPedido().getPizza().getVariedad().getNombrePizza());
-        } else if (columnIndex == 4) {
-            valor = String.valueOf(pedido.getPedido().getPizza().getTipo());
-        } else if (columnIndex == 5) {
-            valor = String.valueOf(pedido.getPedido().getPizza().getTamanio()) + " Porc. ";
-        } else if (columnIndex == 6) {
-            valor = String.valueOf(pedido.getPedido().getCantidad());
-        } else if (columnIndex == 7) {
-            valor = "$" + String.valueOf(pedido.getPrecio());
-        } else {
+            valor = String.valueOf(pedido.getPrecioTotal());
+        }else {
             valor = pedido.getObservaciones();
         }
         return valor;

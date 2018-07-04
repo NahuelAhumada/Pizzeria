@@ -6,6 +6,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,15 +24,28 @@ import java.util.Objects;
  *
  * @author ITUOM
  */
+@Entity
 public class Pedido implements Comparable<Pedido>{
-    
+    @Column
     private String nombreCliente;
+    @Column
     private String horaCreacion;
+    @Transient
     private int tiempoDemoraMinutos;
-    private ItemPedido pedido;
+    @Transient 
     private String observaciones="";
+    @Transient
     private Calendar horaRealDeEntrega;
+    @Transient
     private List<ItemPedido> pizzasAPedir;
+    @Column
+    private float precioTotal; 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    
+    public Pedido() {
+    }
 
 
     public Pedido(String nombreCliente, String horaCreacion, int tiempoDemoraMinutos,
@@ -46,6 +65,7 @@ public class Pedido implements Comparable<Pedido>{
         horaPedido.set(Calendar.SECOND, segundos);
         horaPedido.add(Calendar.MINUTE, tiempoDemoraMinutos);
         this.horaRealDeEntrega=horaPedido;
+        
     }
     
     public String getObservaciones() {
@@ -85,8 +105,13 @@ public class Pedido implements Comparable<Pedido>{
         return true;
     }
     
-    public float getPrecio(){
-        return pedido.calcularCosto();
+    public float getPrecioTotal(){
+        float precioTotal=0f;
+        for(ItemPedido item: pizzasAPedir){
+            precioTotal+=item.calcularCosto();
+        }
+        this.precioTotal=precioTotal;
+        return this.precioTotal;
     }
 
     public String getNombreCliente() {
@@ -101,9 +126,6 @@ public class Pedido implements Comparable<Pedido>{
         return tiempoDemoraMinutos;
     }
 
-    public ItemPedido getPedido() {
-        return pedido;
-    }
     public boolean pedidoAtrasado(Calendar horaActual) {
         
         return horaActual.after(this.horaRealDeEntrega);
