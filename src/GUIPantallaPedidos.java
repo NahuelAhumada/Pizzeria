@@ -415,11 +415,11 @@ public class GUIPantallaPedidos extends javax.swing.JFrame {
         pedidos[0]=pedido;
         labelClienteRespuesta.setText(pedido.getNombreCliente());
         labelHoraRespuesta.setText(pedido.getHoraCreacion());
-        labelPizzaCantRespuesta.setText(String.valueOf(pedido.getPedido().getCantidad()));
-        labelPorcionesRespuesta.setText(pedido.getPedido().getPizza().getTamanio()+" porc.");
-        labelTipoRespuesta.setText(pedido.getPedido().getPizza().getTipo().name());
-        labelVariedadRespuesta.setText(pedido.getPedido().getPizza().getVariedad().getNombrePizza());
-        labelPizzeriaPedidoResultado.setText("$" + String.valueOf(pedido.getPedido().calcularCosto()));
+        //labelPizzaCantRespuesta.setText(String.valueOf(pedido.getPedido().getCantidad()));
+        //labelPorcionesRespuesta.setText(pedido.getPedido().getPizza().getTamanio()+" porc.");
+        //labelTipoRespuesta.setText(pedido.getPedido().getPizza().getTipo().name());
+        //labelVariedadRespuesta.setText(pedido.getPedido().getPizza().getVariedad().getNombrePizza());
+        //labelPizzeriaPedidoResultado.setText("$" + String.valueOf(pedido.getPedido().calcularCosto()));
         
         }else{
             pedidos[1]=pedido;

@@ -60,7 +60,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         labelErrorNombre = new javax.swing.JLabel();
         labelErrorCantidad = new javax.swing.JLabel();
         labelObservaciones = new javax.swing.JLabel();
-        textFieldAgregar = new javax.swing.JTextField();
+        textFieldObservaciones = new javax.swing.JTextField();
         labelErrorHora = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaPizzas = new javax.swing.JTable();
@@ -189,7 +189,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                                         .addComponent(labelObservaciones)
                                         .addGap(34, 34, 34)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(textFieldAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(textFieldObservaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(comboBoxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(78, 78, 78)
@@ -275,7 +275,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                                 .addGap(34, 34, 34)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(labelObservaciones)
-                                    .addComponent(textFieldAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(textFieldObservaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(labelErrorCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(58, 58, 58)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -330,11 +330,18 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
         try {
             Integer demoraReal = Integer.valueOf(demoraIngresada);
             List<ItemPedido> pizzas=modeloTabla.getPizzas();
+            String observaciones=textFieldObservaciones.getText();
             if(pizzas.size()==0){
                 labelErrorListaVacia.setText("No hay pizzas para pedir");
             }else if(!datosDeClienteInvalidos){
-                pedido=new Pedido(nombreIngresado, hora, demoraReal, pizzas, null);
-                
+                pedido=new Pedido(nombreIngresado, hora, demoraReal, pizzas, observaciones);
+                try{
+                pantallaPedidosEnviados.getModelo().agregarPedido(pedido);
+                }catch(Exception e){
+                    
+                }
+                this.modeloTabla.getPizzas().clear();
+                this.setVisible(false);
             }
         } catch (NumberFormatException e) {
             if(!demoraIngresada.isEmpty()){
@@ -453,11 +460,11 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
     private javax.swing.JLabel labelObservaciones;
     private javax.swing.JLabel labelPizzas;
     private javax.swing.JTable tablaPizzas;
-    private javax.swing.JTextField textFieldAgregar;
     private javax.swing.JTextField textFieldCantidad;
     private javax.swing.JTextField textFieldDemora;
     private javax.swing.JTextField textFieldHora;
     private javax.swing.JTextField textFieldNombre;
+    private javax.swing.JTextField textFieldObservaciones;
     // End of variables declaration//GEN-END:variables
     public void iniciarTabla() {
         modeloTabla=new ModeloTablasPizzasAPedir();

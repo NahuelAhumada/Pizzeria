@@ -21,7 +21,7 @@ import org.hibernate.Session;
  */
 public class GUITablaDePedidos extends javax.swing.JFrame {
 
-    private ModeloTablaDePedidos modelo;
+    private ModeloTablaDePedidos modelo=new ModeloTablaDePedidos();
 
     /**
      * Creates new form GUITablaDePedidos
@@ -205,5 +205,8 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
         Timer time =new Timer();
         time.schedule(nuevoTask, 3000, 10000);
     }
-    
+    public ModeloTablaDePedidos getModelo(){
+        return this.modelo;
+    }
+            
 }
