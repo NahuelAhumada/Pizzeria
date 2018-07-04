@@ -6,6 +6,7 @@ import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.TimerTask;
 import javax.swing.JComboBox;
+import org.hibernate.Session;
 import sun.util.calendar.Gregorian;
 
 
@@ -335,7 +336,14 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                 labelErrorListaVacia.setText("No hay pizzas para pedir");
             }else if(!datosDeClienteInvalidos){
                 pedido=new Pedido(nombreIngresado, hora, demoraReal, pizzas, observaciones);
+                float precio=pedido.getPrecioTotal();
                 AdministradorDePedidos admin= new AdministradorDePedidos();
+                Session session=NewHibernateUtil.getSessionFactory().openSession();
+                session.beginTransaction();
+                admin.obtenerListaDePedidos().add(pedido);
+                session.merge(pedido);
+                session.getTransaction().commit();
+                session.close();
                 try{
                 pantallaPedidosEnviados.getModelo().agregarPedido(pedido);
                 }catch(Exception e){
