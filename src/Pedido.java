@@ -136,5 +136,17 @@ public class Pedido implements Comparable<Pedido>{
         return this.horaRealDeEntrega.compareTo(t.horaRealDeEntrega);
         
     }
+
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
+    }
+
+    public void setHoraCreacion(String horaCreacion) {
+        this.horaCreacion = horaCreacion;
+    }
+
+    public void setPrecioTotal() {
+        
+    }
     
 }

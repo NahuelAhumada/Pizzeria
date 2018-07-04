@@ -335,6 +335,7 @@ public class GUIPizzeriaCantidades extends javax.swing.JFrame {
                 labelErrorListaVacia.setText("No hay pizzas para pedir");
             }else if(!datosDeClienteInvalidos){
                 pedido=new Pedido(nombreIngresado, hora, demoraReal, pizzas, observaciones);
+                AdministradorDePedidos admin= new AdministradorDePedidos();
                 try{
                 pantallaPedidosEnviados.getModelo().agregarPedido(pedido);
                 }catch(Exception e){
