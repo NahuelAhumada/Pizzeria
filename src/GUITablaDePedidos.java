@@ -115,6 +115,7 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
         GUIPizzeriaCantidades nuevaPizza = new GUIPizzeriaCantidades();
         nuevaPizza.setVisible(true);
         nuevaPizza.setGui(this);
+        modelo.actualizarLista();
     }//GEN-LAST:event_agregarPedido
 
     private void botonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonLimpiarActionPerformed
@@ -134,6 +135,7 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
         for (Integer posicion : posicionesDePedidosABorrar) {
             modelo.borrarPedido(posicion);
         }   
+        modelo.actualizarLista();
     }//GEN-LAST:event_botonLimpiarActionPerformed
 
     /**
