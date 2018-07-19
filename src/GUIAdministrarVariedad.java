@@ -13,7 +13,7 @@ import org.hibernate.Session;
  * @author User
  */
 public class GUIAdministrarVariedad extends javax.swing.JFrame {
-    private GUIPizzeriaCantidades pizzeria;
+    private GUIPedirPizza pizzeria;
     /**
      * Creates new form GUIAdministrarVariedad
      */
@@ -272,7 +272,7 @@ public class GUIAdministrarVariedad extends javax.swing.JFrame {
          
     }
 
-    public void setPizzeria(GUIPizzeriaCantidades pizzeria) {
+    public void setPizzeria(GUIPedirPizza pizzeria) {
         this.pizzeria = pizzeria;
     }
     

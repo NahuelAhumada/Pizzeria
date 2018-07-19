@@ -19,14 +19,14 @@ import org.hibernate.Session;
  *
  * @author usuario 10
  */
-public class GUITablaDePedidos extends javax.swing.JFrame {
+public class GUIIniciarAdministracionDePedidos extends javax.swing.JFrame {
 
     private ModeloTablaDePedidos modelo=new ModeloTablaDePedidos();
 
     /**
      * Creates new form GUITablaDePedidos
      */
-    public GUITablaDePedidos() {
+    public GUIIniciarAdministracionDePedidos() {
         initComponents();
         inicializarTabla();
         comenzarTask();
@@ -112,7 +112,7 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void agregarPedido(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarPedido
-        GUIPizzeriaCantidades nuevaPizza = new GUIPizzeriaCantidades();
+        GUIPedirPizza nuevaPizza = new GUIPedirPizza();
         nuevaPizza.setVisible(true);
         nuevaPizza.setGui(this);
         modelo.actualizarLista();
@@ -155,20 +155,21 @@ public class GUITablaDePedidos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(GUITablaDePedidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIIniciarAdministracionDePedidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(GUITablaDePedidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIIniciarAdministracionDePedidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(GUITablaDePedidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIIniciarAdministracionDePedidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(GUITablaDePedidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GUIIniciarAdministracionDePedidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUITablaDePedidos().setVisible(true);
+                new GUIIniciarAdministracionDePedidos().setVisible(true);
             }
         });
     }
